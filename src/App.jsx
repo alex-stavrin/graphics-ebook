@@ -1,22 +1,19 @@
 import { Routes, Route, Link } from "react-router";
-
-const Home  = () => <h1 className="text-2xl">Home 🏠</h1>;
-const About = () => <h1 className="text-2xl">About 📄</h1>;
+import EisagogiStaGrafika from "./eisagogi/eisagogi-sta-grafika";
 
 function App() {
 
   return (
-    <>
-      <nav className="flex gap-4 p-4 bg-gray-100">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-      </nav>
-
+    <div className="flex flex-row w-full gap-20">
+      <div >
+        <h1>Chapters</h1>
+        <h2 className="ml-3">1 Εισαγωγή</h2>
+        <h3 className="ml-6"><Link to={"/εισαγωγη/εισαγωγη-στα-γραφικα"}>1.1 Εισαγωγή στα Γραφικά</Link></h3>
+      </div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/εισαγωγη/εισαγωγη-στα-γραφικα" element={<EisagogiStaGrafika />} />
       </Routes>
-    </>
+    </div>
   )
 }
 
