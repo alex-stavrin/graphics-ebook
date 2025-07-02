@@ -130,7 +130,6 @@ export default function EisagogiStaGrafika()
             style={{ width: 400, height: 400, borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
-            <axesHelper args={[3]} />
             <OrbitControls makeDefault />
             <ambientLight intensity={0.5} />
             <directionalLight position={[5, 5, 5]} />
