@@ -8,6 +8,10 @@ import normalObj from '../assets/eisagogi/normal/normal.obj';
 import normalMat from "../assets/eisagogi/normal/normal.mtl";
 import perRes from "../assets/eisagogi/perspective/res.png";
 import perScene from "../assets/eisagogi/perspective/scene.png";
+import orthRes from "../assets/eisagogi/orthographic/res.png";
+import orthScene from "../assets/eisagogi/orthographic/scene.png";
+
+
 import { InlineMath } from 'react-katex'
 
 function useObjWithMtl(objUrl, mtlUrl) {
@@ -69,7 +73,14 @@ export default function Perikoph()
         <p>Σε αυτήν την προβολή δημιουργείται μια πυραμίδα. Οπου ότι είναι μέσα στην πυραμίδα μπορούμε να το δούμε.</p>
         <img src={perScene} width={400} height={400} alt="Perspective Scene" />
         <h3>Ορθογραφική Προβολή</h3>
-        <h2>Περικοπή στο Οπτικό Πεδίο</h2>
-        <p>Στα γραφικά το οπτικό πεδίο της κάμερα έχει σχήμα πυραμίδας</p>
+        <p>Στην ορθογραφική προβολή (orthographic projection) δεν υπάρχει βάθος.</p>
+        <img src={orthRes} width={400} height={400} alt="Orthographic Image" />
+        <p>Στην ορθογραφική προβολή δημιουργείται ένα ορθογώνιο παραλληλόγραμμο. Που ότι είναι μέσα του μπορούμε να δούμε</p>
+        <img src={orthScene} width={400} height={400} alt="Orthographic Scene" />
+        <h2>Περικοπή στο Οπτικό Πεδίο (Frustum Culling)</h2>
+        <p>Σε αυτή την τεχνική περικοπής ότι είναι ολόκληρο έξω απο την πυραμίδα (προοπτική προβολή) 
+          ή έξω απο το ορθογώνιο παραλληλεπίπεδο (ορθογραφική προβολή) δεν το ζωγραφίζουμε.</p>
+        <p>Στο συγκεκριμένο video το αποτέλεσμα ειναι υπερβολικό για να μπορούμε να δούμε όντως την επίδραση του</p>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/-m4HEQc_R9s?si=j3_j3dPpY26-cIn8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </div>
 }

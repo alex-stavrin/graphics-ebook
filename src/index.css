@@ -23,6 +23,11 @@
         @apply text-lg font-bold;
     }
 
+    h5
+    {
+        @apply text-[16px] font-bold;
+    }
+
     a
     {
         @apply text-blue-500 underline
