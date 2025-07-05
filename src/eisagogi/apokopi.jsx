@@ -3,6 +3,9 @@ import clipPoint from '../assets/eisagogi/clipping/clip-point.png';
 import clipCS from '../assets/eisagogi/clipping/clip-cs.png';
 import csEx1 from '../assets/eisagogi/cs-clipping/ex1.png';
 import csEx2 from '../assets/eisagogi/cs-clipping/ex2.png';
+import numbered from '../assets/eisagogi/lb-clip/numbered.png';
+import directions from '../assets/eisagogi/lb-clip/directions.png';
+import example from '../assets/eisagogi/lb-clip/example.png';
 import { Stage, Layer, Line, Text, Circle } from 'react-konva';
 import { useState } from "react";
 
@@ -112,5 +115,48 @@ export default function Apokopi()
         <input type="range" min="0" max="1" step={0.01} value={t} className="w-1/4" onChange={onSliderChanged}/>
         <InlineMath math={`t=${t}`}/>
         <h4>Αλγόριθμος Liang - Barsky (LB)</h4>
+        <p>Έστω οτι έχουμε την ευθεία <InlineMath math={"p=p_1+t(p_2-p_1), t \\in [0,1]"}/></p>
+        <p>Οπου η συντεταγμένες κάθε σημείου στην ευθεία ορίζονται ως <InlineMath math="x=x_1+tΔx"/> και <InlineMath math="y=y_1+tΔy"/></p>
+        <p>Οπου <InlineMath math="Δx=x_2-x_1, Δy=y_2-y_1"/></p>
+        <p>Ένα μέρος του ευθύγραμμου τμήματος βρίσκεται μέσα στην οθόνη για κάποια t αν:</p>
+        <p><InlineMath math="x_{min} \le x_1 + tΔx \le x_{max}"/> και</p>
+        <p><InlineMath math="y_{min} \le y_1 + tΔy \le y_{max}"/></p>
+        <p>Μετακινόντας κάποιος όρους και χωρίζοντας κάθε ανίσωση σε δύο. Το παραπανω μπορεί να γραφτεί</p>
+        <p><InlineMath math="-tΔx \le x_1-x_{min}"/> και</p>
+        <p><InlineMath math="tΔx \le x_{max}-x_{1}"/> και</p>
+        <p><InlineMath math="-tΔy \le y_1-y_{min}"/> και</p>
+        <p><InlineMath math="tΔy \le y_{max}-y_{1}"/> και</p>
+        <p>Οι παραπάνω 4 ανισότητες μπορούν να γίνουν πιο γενικές ως <InlineMath math="tp_i \le q_i, i \in \{1,2,3,4\}"/> οπου</p>
+        <p><InlineMath math="p_1=-Δx, q_1=x_1-x_{min}"/></p>
+        <p><InlineMath math="p_2=Δx, q_2=x_{max}-x_{1}"/></p>
+        <p><InlineMath math="p_3=-Δy, q_3=y_1-y_{min}"/></p>
+        <p><InlineMath math="p_4=Δy, q_4=y_{max}-y_{1}"/></p>
+        <p>Στην συνέχεια αριθμίζουμε κάθε πλευρά της οθόνης του παραθύρου μας</p>
+        <img src={numbered} width={400} height={400} alt="Numbered window"/>
+        <p>Επίσης μπορούμε τώρα να θεωρήσουμε οτι οι ευθείες έχουν κάποιο είδους κατεύθυνση σε σχέση με την οθόνη με βάση την αρίθμηση των σημείων</p>
+        <p className="text-red-700">εισερχόμενη ευθεία</p>
+        <p className="text-green-700">εξερχόμενη ευθεία</p>
+        <img src={directions} width={400} height={400} alt="Directions image"/>
+        <p>Παρατηρήσεις με βάση το <InlineMath math="p_i"/></p>
+        <ul className="list-disc ml-5">
+            <li>
+                <InlineMath math="p_i=0"/> το ευθύγραμμο τμήμα είναι παράλληλο στην πλευρά i της οθόνης
+            </li>
+            <li>
+                <InlineMath math="p_i \ne 0"/> το σημείο τομής της ευθείας και της πλευράς i της οθόνης
+                 θα είναι το σημείο που προκύπτει άμα βάλουμε στην ευθεία <InlineMath math="t_i=q_i/p_i"/>
+            </li>
+            <li>
+                <InlineMath math="p_i < 0"/> το ευθύγραμμο τμήμα είναι <span className="text-green-700">εισερχόμενο</span> ως προς την ακμή i
+            </li>
+            <li>
+                <InlineMath math="p_i > 0"/> το ευθύγραμμο τμήμα είναι <span className="text-red-700">εξερχόμενο</span>  ως προν την ακμη i
+            </li>
+        </ul>
+        <p>Ορίζουμε <InlineMath math="t_{in} = max(\{\frac{q_i}{p_i}|p_i < 0, i:1..4\}\cup\{0\})="/> η υψηλότερη τιμή του t όπου η γραμμή εισέρχεται στην οθόνη</p>
+        <p>Ορίζουμε <InlineMath math="t_{out} = max(\{\frac{q_i}{p_i}|p_i > 0, i:1..4\}\cup\{1\})="/> η χαμηλότερη τιμή του t όπου η γραμμή εξέρχεται απο την οθόνη</p>
+        <p>Αν <InlineMath math="t_{in} \le t_{out}"/> τότε τα βάζουμε στην ευθεία για να υπολογίσουμε το αποκόμενο τμήμα</p>
+        <h5>Παράδειγμα LB</h5>
+        <img src={example} width={400} height={400} alt="LB example image"/>
     </div>
 }
