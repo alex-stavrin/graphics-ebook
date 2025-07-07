@@ -2,23 +2,34 @@ import { Routes, Route, Link } from "react-router";
 import EisagogiStaGrafika from "./eisagogi/eisagogi-sta-grafika";
 import Perikoph from "./eisagogi/perikoph";
 import Apokopi from "./eisagogi/apokopi";
+import Apokripsi from "./eisagogi/apokripsi";
+import MetasxhmatismoiEisagogi from "./metasxhmatismoi/metasxhmatismoi-eisagogi";
 
 function App() {
 
   return (
     <div className="flex flex-row w-full gap-10">
-      <div>
+      <div className="flex flex-col gap-2">
         <h1>Chapters</h1>
-        <h2 className="ml-3">1 Εισαγωγή</h2>
+
+        <h2 className="ml-3">1. Εισαγωγή</h2>
         <h3 className="ml-6"><Link to={"/εισαγωγη/εισαγωγη-στα-γραφικα"}>1.1 Εισαγωγή στα Γραφικά</Link></h3>
         <h3 className="ml-6"><Link to={"/εισαγωγη/περικοπη"}>1.2 Περικοπή</Link></h3>
         <h3 className="ml-6"><Link to={"/εισαγωγη/αποκοπη"}>1.3 Αποκοπή</Link></h3>
+        <h3 className="ml-6"><Link to={"/εισαγωγη/αποκρυψη"}>1.4 Απόκρυψη</Link></h3>
+
+        <h2 className="ml-3">2. Μετασχηματισμοί</h2>
+        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/εισαγωγη-στους-μετασχηματισμους"}>2.1 Εισαγωγή στους Μετασχηματισμούς</Link></h3>
+
       </div>
       <div className="w-2/3">
         <Routes>
           <Route path="/εισαγωγη/εισαγωγη-στα-γραφικα" element={<EisagogiStaGrafika />} />
           <Route path="/εισαγωγη/περικοπη" element={<Perikoph />} />
           <Route path="/εισαγωγη/αποκοπη" element={<Apokopi />} />
+          <Route path="/εισαγωγη/αποκρυψη" element={<Apokripsi />} />
+
+          <Route path="/μετασχηματισμοι/εισαγωγη-στους-μετασχηματισμους" element={<MetasxhmatismoiEisagogi />} />
         </Routes>
       </div>
     </div>
