@@ -115,7 +115,7 @@ export default function Apokopi()
                 <Line points={[100,100,200,200]} stroke={"black"}/>
             </Layer>
         </Stage>
-        <input type="range" min="0" max="1" step={0.01} value={t} className="w-1/4" onChange={onSliderChanged}/>
+        <input type="range" min="0" max="1" step={0.00001} value={t} className="w-1/4" onChange={onSliderChanged}/>
         <InlineMath math={`t=${t}`}/>
         <h4>Αλγόριθμος Liang - Barsky (LB)</h4>
         <p>Έστω οτι έχουμε την ευθεία <InlineMath math={"p=p_1+t(p_2-p_1), t \\in [0,1]"}/></p>
