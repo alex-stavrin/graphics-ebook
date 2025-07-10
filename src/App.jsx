@@ -4,6 +4,7 @@ import Perikoph from "./eisagogi/perikoph";
 import Apokopi from "./eisagogi/apokopi";
 import Apokripsi from "./eisagogi/apokripsi";
 import MetasxhmatismoiEisagogi from "./metasxhmatismoi/metasxhmatismoi-eisagogi";
+import OmogenisMetasxhmatismoi from "./metasxhmatismoi/omogenis-metasxhmatismoi";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
 
         <h2 className="ml-3">2. Μετασχηματισμοί</h2>
         <h3 className="ml-6"><Link to={"/μετασχηματισμοι/εισαγωγη-στους-μετασχηματισμους"}>2.1 Εισαγωγή στους Μετασχηματισμούς</Link></h3>
+        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/ομογενης-μετασχηματισμοι"}>2.2 Ομογενής Μετασχηματισμοί</Link></h3>
 
       </div>
       <div className="w-2/3">
@@ -30,6 +32,7 @@ function App() {
           <Route path="/εισαγωγη/αποκρυψη" element={<Apokripsi />} />
 
           <Route path="/μετασχηματισμοι/εισαγωγη-στους-μετασχηματισμους" element={<MetasxhmatismoiEisagogi />} />
+          <Route path="/μετασχηματισμοι/ομογενης-μετασχηματισμοι" element={<OmogenisMetasxhmatismoi />} />
         </Routes>
       </div>
     </div>
