@@ -1,8 +1,17 @@
 import { InlineMath } from "react-katex";
 import Matrix from "../components/Matrix";
+import { Canvas } from '@react-three/fiber'
+import { OrbitControls } from '@react-three/drei'
+import {a, useSpring} from "@react-spring/three"
 
 export default function OmogenisMetasxhmatismoi()
 {
+
+    const [posBox, posBoxApi] = useSpring(() => ({
+        position : [0,0,0],
+        config: {tension: 120, friction: 14}
+    }))
+
     return <div className="flex flex-col gap-3">
         <h1>Ομογενής Μετασχηματισμοί</h1>
         <p>Έστω οτι θέλουμε να περιστρέψουμε ένα αντικείμενο κατα 45 μοίρες και να διπλασιάσουμε το μέγεθος του. Υπάρχουν δύο τρόποι:</p>
@@ -46,5 +55,40 @@ export default function OmogenisMetasxhmatismoi()
         <h2>Ομογενής συντεταγμένες σε 3D</h2>
         <p>Στις τρείς διαστάσεις προσθέτουμε μια νέα διαστάση με το w. Αρα ένα σημείο είναι <InlineMath math="(x,y,z,w)"/></p>
         <p>Ισχύουν τα ίδια πράγματα που ισχύουν και για 2D</p>
+        <h3>3D Ομογενής Μεταφορά</h3>
+        <p>Κατα διάνυσμα <InlineMath math="\vec{d}=(d_x,d_y,d_z)"/></p>
+        <p><InlineMath math="T(\vec{d})="/><Matrix matrix={[
+            [1,0,0,"d_x"],
+            [0,1,0,"d_y"],
+            [0,0,1,"d_z"],
+            [0,0,0,1]
+        ]}/></p>
+        <Canvas
+            camera={{ position: [4, 4, 6], fov: 45 }}
+            style={{ width: 300, height: 300, borderRadius: 15 }}
+        >
+            <color attach="background" args={['black']} />
+            <a.mesh position={posBox.position}>
+                <boxGeometry/>
+                <meshStandardMaterial color={"red"}/>
+            </a.mesh>
+            <ambientLight/>
+            <directionalLight
+                position={[5, 5, 5]}
+                intensity={1}
+                castShadow
+                shadow-mapSize-width={1024}
+                shadow-mapSize-height={1024}
+            />
+            <axesHelper args={[3]} />
+            <OrbitControls makeDefault />
+        </Canvas>
+        <h3>3D Ομογενής Αλλαγή Κλίμακας</h3>
+        <p><InlineMath math="S(s_x,s_y,s_z)="/> <Matrix matrix={[
+            ["s_x", 0,0,0],
+            [0, "s_y", 0, 0],
+            [0, 0, "s_z", 0],
+            [0,0,0,1]
+        ]}/></p>
     </div>
 }
