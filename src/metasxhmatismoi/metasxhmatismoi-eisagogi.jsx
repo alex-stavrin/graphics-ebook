@@ -3,6 +3,7 @@ import Matrix from "../components/Matrix";
 import { Layer, Stage, Rect, RegularPolygon } from "react-konva";
 import { useEffect, useRef } from "react";
 import Konva from "konva";
+import AnimationButtonsGroup from "../components/AnimationButtonsGroup";
 
 export default function MetasxhmatismoiEisagogi()
 {
@@ -117,23 +118,16 @@ export default function MetasxhmatismoiEisagogi()
             που στην διαγώνιο έχει 1 και όπου αλλού 0. Ο πολλαπλασιασμός με τον I πίνακα δεν επηρεάζει καθόλου το σημείο/σχήμα μας
         </p>
         <p>Το τελικό σημείο θα προκύψει απο την πρόσθεση <InlineMath math="Φ(p)= p + \vec{t}"/></p>
-        <div className="flex flex-row gap-2">
-            <button class="bg-red-500 hover:bg-red-600 text-white font-semibold w-[100px] py-2 px-4 rounded-lg shadow"
-                onClick={() => {
-                    translationRef.current["reset"]();
-                    translationRef.current["play"]();
-                }}
-            >
-                Play
-            </button>
-                    <button class="bg-red-500 hover:bg-red-600 text-white font-semibold w-[100px] py-2 px-4 rounded-lg shadow"
-                onClick={() => {
-                    translationRef.current["reset"]();
-                }}
-            >
-                Reset
-            </button>
-        </div>
+        <AnimationButtonsGroup 
+            color={"red"}
+            playFunction={() => {
+                translationRef.current["reset"]();
+                translationRef.current["play"]();
+            }}
+            resetFunction={() => {
+                translationRef.current["reset"]();
+            }}
+        />
         <div className="border-3 w-[400px] h-[400px]">
             <Stage width={400} height={400}>
                 <Layer>
@@ -158,23 +152,16 @@ export default function MetasxhmatismoiEisagogi()
                 <InlineMath math="A = "/> <Matrix matrix={[["s_x", 0], [0, "s_y"]]}/>
             </li>
         </ul>
-        <div className="flex flex-row gap-2">
-            <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold w-[100px] py-2 px-4 rounded-lg shadow"
-                onClick={() => {
-                    scaleRef.current["reset"]();
-                    scaleRef.current["play"]();
-                }}
-            >
-                Play
-            </button>
-                    <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold w-[100px] py-2 px-4 rounded-lg shadow"
-                onClick={() => {
-                    scaleRef.current["reset"]();
-                }}
-            >
-                Reset
-            </button>
-        </div>
+        <AnimationButtonsGroup 
+            color={"blue"}
+            playFunction={() => {
+                scaleRef.current["reset"]();
+                scaleRef.current["play"]();
+            }}
+            resetFunction={() => {
+                scaleRef.current["reset"]();
+            }}
+        />
         <div className="border-3 w-[400px] h-[400px]">
             <Stage width={400} height={400}>
                 <Layer>
@@ -203,16 +190,14 @@ export default function MetasxhmatismoiEisagogi()
                 <InlineMath math="A = "/><Matrix matrix={[["cos(θ)", "-sin(θ)"], ["sin(θ)", "cos(θ)"]]}/>
             </li>
         </ul>
-        <div className="flex flex-row gap-2">
-            <button class="bg-green-500 hover:bg-green-600 text-white font-semibold w-[100px] py-2 px-4 rounded-lg shadow"
-                onClick={() => {
-                    rotateRef.current["reset"]();
-                    rotateRef.current["play"]();
-                }}
-            >
-                Play
-            </button>
-        </div>
+        <AnimationButtonsGroup 
+            color={"green"}
+            hideReset
+            playFunction={() => {
+                rotateRef.current["reset"]();
+                rotateRef.current["play"]();
+            }}
+        />
         <div className="border-3 w-[400px] h-[400px]">
             <Stage width={400} height={400}>
                 <Layer>
@@ -248,23 +233,17 @@ export default function MetasxhmatismoiEisagogi()
                 </ul>
             </li>
         </ul>
-        <div className="flex flex-row gap-2">
-            <button class="bg-purple-500 hover:bg-purple-600 text-white font-semibold w-[100px] py-2 px-4 rounded-lg shadow"
-                onClick={() => {
-                    skewRef.current["reset"]();
-                    skewRef.current["play"]();
-                }}
-            >
-                Play
-            </button>
-                    <button class="bg-purple-500 hover:bg-purple-600 text-white font-semibold w-[100px] py-2 px-4 rounded-lg shadow"
-                onClick={() => {
-                    skewRef.current["reset"]();
-                }}
-            >
-                Reset
-            </button>
-        </div>
+        <AnimationButtonsGroup 
+            color={"purple"}
+            
+            playFunction={() => {
+                skewRef.current["reset"]();
+                skewRef.current["play"]();
+            }}
+            resetFunction={() => {
+                skewRef.current["reset"]();
+            }}
+        />
         <div className="border-3 w-[400px] h-[400px]">
             <Stage width={400} height={400}>
                 <Layer>

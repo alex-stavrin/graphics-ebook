@@ -1,16 +1,61 @@
 import { InlineMath } from "react-katex";
 import Matrix from "../components/Matrix";
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls } from '@react-three/drei'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { OrbitControls, Text } from '@react-three/drei'
+// eslint-disable-next-line no-unused-vars
 import {a, useSpring} from "@react-spring/three"
+import AnimationButtonsGroup from "../components/AnimationButtonsGroup";
+import { useRef } from "react";
+
+const RotationAxis = Object.freeze({
+  X: "X",
+  Y: "Y",
+  Z: "Z"
+});
 
 export default function OmogenisMetasxhmatismoi()
 {
 
     const [posBox, posBoxApi] = useSpring(() => ({
         position : [0,0,0],
-        config: {tension: 120, friction: 14}
+        config: {tension: 250, friction: 50}
     }))
+
+    const [scaleBox, scaleBoxApi] = useSpring(() => ({
+        scale : [1,1,1],
+        config: {tension: 250, friction: 50}
+    }))
+
+
+
+    const RotatingBox = ({rotationAxis}) => {
+
+        const ref = useRef();
+
+        useFrame(() => {
+            if (ref.current) 
+            {
+                if(rotationAxis == RotationAxis.X)
+                {
+                    ref.current.rotation.x += 0.01;
+                }
+
+                if(rotationAxis == RotationAxis.Y)
+                {
+                    ref.current.rotation.y += 0.01;
+                }
+                if(rotationAxis == RotationAxis.Z)
+                {
+                    ref.current.rotation.z += 0.01;
+                }
+            }
+        });
+
+        return  (<a.mesh ref={ref}>
+            <boxGeometry/>
+            <meshStandardMaterial color={"green"}/>
+        </a.mesh>)
+    }
 
     return <div className="flex flex-col gap-3">
         <h1>Ομογενής Μετασχηματισμοί</h1>
@@ -63,6 +108,14 @@ export default function OmogenisMetasxhmatismoi()
             [0,0,1,"d_z"],
             [0,0,0,1]
         ]}/></p>
+        <AnimationButtonsGroup
+            color={"red"}
+            playFunction={() => {
+                posBoxApi.start({position: [0,0,0], immediate: true})
+                posBoxApi.start({position: [2,0,0]})
+            }}
+            resetFunction={() => posBoxApi.start({position: [0,0,0], immediate: true})}
+        />
         <Canvas
             camera={{ position: [4, 4, 6], fov: 45 }}
             style={{ width: 300, height: 300, borderRadius: 15 }}
@@ -90,5 +143,116 @@ export default function OmogenisMetasxhmatismoi()
             [0, 0, "s_z", 0],
             [0,0,0,1]
         ]}/></p>
+        <AnimationButtonsGroup
+            color={"blue"}
+            playFunction={() => {
+                scaleBoxApi.start({scale: [1,1,1], immediate: true})
+                scaleBoxApi.start({scale: [2,2,2]})
+            }}
+            resetFunction={() => scaleBoxApi.start({scale: [1,1,1], immediate: true})}
+        />
+        <Canvas
+            camera={{ position: [4, 4, 6], fov: 45 }}
+            style={{ width: 300, height: 300, borderRadius: 15 }}
+        >
+            <color attach="background" args={['black']} />
+            <a.mesh scale={scaleBox.scale}>
+                <boxGeometry/>
+                <meshStandardMaterial color={"blue"}/>
+            </a.mesh>
+            <ambientLight/>
+            <directionalLight
+                position={[5, 5, 5]}
+                intensity={1}
+                castShadow
+                shadow-mapSize-width={1024}
+                shadow-mapSize-height={1024}
+            />
+            <axesHelper args={[3]} />
+            <OrbitControls makeDefault />
+        </Canvas>
+        <h3>3D Ομογενής Περιστροφή</h3>
+        <p>Την περιστροφή την περιγράφουμε ως περιστροφή κατα γωνία θ γύρω απο έναν απο τους τρείς άξονες</p>
+        <h4>Περιστροφή γύρω απο άξονα X</h4>
+        <p><InlineMath math="R_x(θ) = "/><Matrix  matrix={[[1,0,0,0],
+                [0,"cosθ", "-sinθ", 0],
+                [0, "sinθ", "cosθ", 0],
+                [0,0,0,1] 
+            ]}/>
+        </p>
+        <Canvas
+            camera={{ position: [4, 4, 6], fov: 65 }}
+            style={{ width: 300, height: 300, borderRadius: 15 }}
+        >
+            <color attach="background" args={['black']} />
+            <RotatingBox rotationAxis={"X"}/>
+            <ambientLight/>
+            <directionalLight
+                position={[5, 5, 5]}
+                intensity={1}
+                castShadow
+                shadow-mapSize-width={1024}
+                shadow-mapSize-height={1024}
+            />
+            <axesHelper args={[3]} />
+                <Text position={[3.5, 0, 0]} fontSize={1} color="red" billboard>X</Text>
+                <Text position={[0, 3.6, 0]} fontSize={1} color="green" billboard>Y</Text>
+                <Text position={[0, 0, 3.6]} fontSize={1} color="blue" billboard>Z</Text>
+            <OrbitControls makeDefault />
+        </Canvas>
+        <h4>Περιστροφή γύρω απο άξονα Y</h4>
+        <p><InlineMath math="R_y(θ) = "/><Matrix  matrix={[["cosθ",0,"sinθ",0],
+                [0,1, 0, 0],
+                ["-sinθ", 0, "cosθ", 0],
+                [0,0,0,1] 
+            ]}/>
+        </p>
+        <Canvas
+            camera={{ position: [4, 4, 6], fov: 65 }}
+            style={{ width: 300, height: 300, borderRadius: 15 }}
+        >
+            <color attach="background" args={['black']} />
+            <RotatingBox rotationAxis={"Y"}/>
+            <ambientLight/>
+            <directionalLight
+                position={[5, 5, 5]}
+                intensity={1}
+                castShadow
+                shadow-mapSize-width={1024}
+                shadow-mapSize-height={1024}
+            />
+            <axesHelper args={[3]} />
+                <Text position={[3.5, 0, 0]} fontSize={1} color="red" billboard>X</Text>
+                <Text position={[0, 3.6, 0]} fontSize={1} color="green" billboard>Y</Text>
+                <Text position={[0, 0, 3.6]} fontSize={1} color="blue" billboard>Z</Text>
+            <OrbitControls makeDefault />
+        </Canvas>
+        <h4>Περιστροφή γύρω απο άξονα Z</h4>
+                <p><InlineMath math="R_z(θ) = "/><Matrix  matrix={[["cosθ","-sinθ",0,0],
+                ["sinθ","cosθ", 0, 0],
+                [0, 0, 1, 0],
+                [0,0,0,1] 
+            ]}/>
+        </p>
+        <Canvas
+            camera={{ position: [4, 4, 6], fov: 65 }}
+            style={{ width: 300, height: 300, borderRadius: 15 }}
+        >
+            <color attach="background" args={['black']} />
+            <RotatingBox rotationAxis={"Z"}/>
+            <ambientLight/>
+            <directionalLight
+                position={[5, 5, 5]}
+                intensity={1}
+                castShadow
+                shadow-mapSize-width={1024}
+                shadow-mapSize-height={1024}
+            />
+            <axesHelper args={[3]} />
+                <Text position={[3.5, 0, 0]} fontSize={1} color="red" billboard>X</Text>
+                <Text position={[0, 3.6, 0]} fontSize={1} color="green" billboard>Y</Text>
+                <Text position={[0, 0, 3.6]} fontSize={1} color="blue" billboard>Z</Text>
+            <OrbitControls makeDefault />
+        </Canvas>
     </div>
 }
