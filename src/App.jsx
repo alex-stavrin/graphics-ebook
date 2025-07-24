@@ -5,7 +5,8 @@ import Apokopi from "./eisagogi/apokopi";
 import Apokripsi from "./eisagogi/apokripsi";
 import MetasxhmatismoiEisagogi from "./metasxhmatismoi/metasxhmatismoi-eisagogi";
 import OmogenisMetasxhmatismoi from "./metasxhmatismoi/omogenis-metasxhmatismoi";
-import MetasxhmatismoiStaStadiaGrafikon from "./metasxhmatismoi/metasxhmatismoi-sta-stadia-grafikon";
+import GrafoiSkhnhs from "./metasxhmatismoi/grafoi-skhnhs";
+import ProbolesParathrhsh from "./metasxhmatismoi/proboles-parathrhsh";
 
 function App() {
 
@@ -23,7 +24,8 @@ function App() {
         <h2 className="ml-3">2. Μετασχηματισμοί</h2>
         <h3 className="ml-6"><Link to={"/μετασχηματισμοι/εισαγωγη-στους-μετασχηματισμους"}>2.1 Εισαγωγή στους Μετασχηματισμούς</Link></h3>
         <h3 className="ml-6"><Link to={"/μετασχηματισμοι/ομογενης-μετασχηματισμοι"}>2.2 Ομογενής Μετασχηματισμοί</Link></h3>
-        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/μετασχηματισμοι-στα-σταδια-γραφικων"}>2.3 Μετασχηματισμοί στα Στάδια Γραφικών</Link></h3>
+        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/γραφοι-σκηνης"}>2.3 Γράφοι Σκηνής</Link></h3>
+        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/προβολες-παρατηρηση"}>2.4 Προβολές - Παρατήρηση</Link></h3>
 
       </div>
       <div className="w-2/3">
@@ -35,7 +37,8 @@ function App() {
 
           <Route path="/μετασχηματισμοι/εισαγωγη-στους-μετασχηματισμους" element={<MetasxhmatismoiEisagogi />} />
           <Route path="/μετασχηματισμοι/ομογενης-μετασχηματισμοι" element={<OmogenisMetasxhmatismoi />} />
-          <Route path="/μετασχηματισμοι/μετασχηματισμοι-στα-σταδια-γραφικων" element={<MetasxhmatismoiStaStadiaGrafikon />} />
+          <Route path="/μετασχηματισμοι/γραφοι-σκηνης" element={<GrafoiSkhnhs />} />
+          <Route path="/μετασχηματισμοι/προβολες-παρατηρηση" element={<ProbolesParathrhsh/>} />
         </Routes>
       </div>
     </div>

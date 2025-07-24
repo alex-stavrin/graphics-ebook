@@ -1,6 +1,6 @@
 import { InlineMath } from "react-katex";
 import Matrix from "../components/Matrix";
-import { Layer, Stage, Rect, RegularPolygon } from "react-konva";
+import { Layer, Stage, Rect } from "react-konva";
 import { useEffect, useRef } from "react";
 import Konva from "konva";
 import AnimationButtonsGroup from "../components/AnimationButtonsGroup";
