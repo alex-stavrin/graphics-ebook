@@ -2,6 +2,8 @@ import perScene from "../assets/eisagogi/perspective/scene.png";
 import perRes from "../assets/eisagogi/perspective/res.png";
 import orthoScene from "../assets/eisagogi/orthographic/scene.png";
 import orthoRes from "../assets/eisagogi/orthographic/res.png";
+import nearFar from "../assets/metasxhmatismoi/near-far.png";
+
 import { InlineMath } from "react-katex";
 import Matrix from "../components/Matrix";
 
@@ -75,5 +77,43 @@ export default function ProbolesParathrhsh()
         <img src={orthoScene} width={400} height={400} alt="Orthographic Image" />
         <h4>Πλάγια Προβολή</h4>
         <p>η κατεύθυνση προβολής δεν είναι απαραίτητα κάθετη στο επίπεδο προβολής</p>
+        <h2>Μετασχηματισμός παρατήρησης</h2>
+        <p>Ο μετασχηματισμός παρατήρησης είναι ο μετασχηματισμός για να κάνουμε μετάβαση απο συντεταγμένες κόσμου σε συντεταγμένες παρατηρητή</p>
+        <p><InlineMath math="M_{View}=M_{-CameraRotate}*M_{-CameraTranslate}"/></p>
+        <p>Για να ορίσουμε το σύστημα συντεταγμένων παρατήρησης χρειαζόμαστε:</p>
+        <ul className="list-disc ml-5"> 
+            <li>
+                Ένα σημείο Ε που θα είναι το κέντρο/κάμερα
+            </li>
+            <li>
+                Την κατεύθυνση παρατήρησης <InlineMath math="\vec{g}"/>. Που κοιτάει η κάμερα
+            </li>
+            <li>
+                Ένα διάνυσμα που αναπαρηστά προς τα πού βρίσκεται το "πάνω" στον κόσμο μας
+            </li>
+        </ul>
+        <h2>Μετασχηματισμός Προβολής</h2>
+        <p>Ο μετασχηματισμός για την μετάβαση απο το σύστημα συντεταγμένων προβολής σε κανονικοποιημένες συντεταγμένες συσκευής</p>
+        <h3>Ορθογραφική προβολή</h3>
+        <p>Ότι είναι μέσα στο ορθογώνιο παραλληλεπίπεδο θα μπεί στην οθόνη</p>
+        <img src={orthoScene} width={400} height={400} alt="Orthographic Image" />
+        <img src={orthoRes} width={400} height={400} alt="Orthographic Image" />
+        <h3>Προοπτική προβολή</h3>
+        <img src={perRes} width={400} height={400} alt="Perspective Image" />
+        <img src={perScene} width={400} height={400} alt="Perspective Image" />
+        <p>Εδώ πέρα ότι είναι μέσα στην πυραμίδα θα μπεί στην οθόνη. Αυτή η πυραμιδά έχε κάποιος ιδιότητες</p>
+        <ul className="list-disc ml-5">
+            <li>
+                θ = γωνια οπτικού πεδίου (FOV = field of view)
+            </li>
+            <li>
+                near plane = το επίπεδο που βρίσκεται στην κορυφή της πυραμίδας
+            </li>
+            <li>
+                far plane = το επίπεδο που είναι η βάση της πυραμίδας
+            </li>
+        </ul>
+        <img src={nearFar} width={400} height={400} alt="Near Far Planes Image" />
+
     </div>
 }

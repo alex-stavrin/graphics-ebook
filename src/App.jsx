@@ -7,6 +7,7 @@ import MetasxhmatismoiEisagogi from "./metasxhmatismoi/metasxhmatismoi-eisagogi"
 import OmogenisMetasxhmatismoi from "./metasxhmatismoi/omogenis-metasxhmatismoi";
 import GrafoiSkhnhs from "./metasxhmatismoi/grafoi-skhnhs";
 import ProbolesParathrhsh from "./metasxhmatismoi/proboles-parathrhsh";
+import EisagogiSthSxediash from "./sxediash/eisagogi-sth-sxediash";
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
         <h3 className="ml-6"><Link to={"/μετασχηματισμοι/γραφοι-σκηνης"}>2.3 Γράφοι Σκηνής</Link></h3>
         <h3 className="ml-6"><Link to={"/μετασχηματισμοι/προβολες-παρατηρηση"}>2.4 Προβολές - Παρατήρηση</Link></h3>
 
+        <h2 className="ml-3">3. Σχεδίαση</h2>
+        <h3 className="ml-6"><Link to={"/σχεδιαση/εισαγωγη-στη-σχεδιαση"}>3.1 Εισαγωγή στη Σχεδίαση</Link></h3>
+
       </div>
       <div className="w-2/3">
         <Routes>
@@ -39,6 +43,8 @@ function App() {
           <Route path="/μετασχηματισμοι/ομογενης-μετασχηματισμοι" element={<OmogenisMetasxhmatismoi />} />
           <Route path="/μετασχηματισμοι/γραφοι-σκηνης" element={<GrafoiSkhnhs />} />
           <Route path="/μετασχηματισμοι/προβολες-παρατηρηση" element={<ProbolesParathrhsh/>} />
+
+          <Route path="/σχεδιαση/εισαγωγη-στη-σχεδιαση" element={<EisagogiSthSxediash/>} />
         </Routes>
       </div>
     </div>
