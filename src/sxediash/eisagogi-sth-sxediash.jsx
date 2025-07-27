@@ -10,9 +10,18 @@ import { useState } from "react";
 const point1 = [100, 100];
 const point2 = [200, 200];
 
+const center = [150,150]
+const radius = 100
+
 const getPoint = (t) => {
     let px = point1[0] + t * (point2[0] - point1[0]);
     let py = point1[1] + t * (point2[1] - point1[1]);
+    return [px,py];
+}
+
+const getPointC = (t) => {
+    let px = center[0] + radius * Math.cos(2 * Math.PI * t);
+    let py = center[1] + radius * Math.sin(2 * Math.PI * t);
     return [px,py];
 }
 
@@ -21,10 +30,19 @@ export default function EisagogiSthSxediash()
     const [t, setT] = useState(0.5);
     const [point, setPoint] = useState(getPoint(0.5));
 
+    const [tc, setTc] = useState(0.0);
+    const [pointC, setPointC] = useState(getPointC(tc));
+
     const onSliderChanged = (event) => {
         let newT = event.target.value;
         setT(newT);
         setPoint(getPoint(newT))
+    }
+
+    const onSliderChangedC = (event) => {
+        let newT = event.target.value;
+        setTc(newT);
+        setPointC(getPointC(newT))
     }
 
     return <div className="flex flex-col gap-3">
@@ -84,5 +102,23 @@ export default function EisagogiSthSxediash()
         </Stage>
         <input type="range" min="0" max="1" step={0.00001} value={t} className="w-1/4" onChange={onSliderChanged}/>
         <InlineMath math={`t=${t}`}/>
+        <h5>Κύκλος</h5>
+        <p><InlineMath math="c(t)=(x(t),y(t))"/> με κέντρο <InlineMath math="(x_c,y_c)"/> και ακτίνα <InlineMath math="r"/></p>
+        <p><InlineMath math="x(t)=x_c+rcos(2πt)"/></p>
+        <p><InlineMath math="y(t)=y_c+rsin(2πt)"/></p>
+        <p><InlineMath math="t\in [0,1]"/></p>
+        <Stage width={300} height={300}>
+            <Layer>
+                <Circle key={1} x={center[0]} y={center[1]} radius={radius} fill={"transparent"} stroke={3}/>
+                <Circle key={2} x={pointC[0]} y={pointC[1]} radius={6} fill={"red"}/>
+            </Layer>
+        </Stage>
+        <input type="range" min="0" max="1" step={0.00001} value={tc} className="w-1/4" onChange={onSliderChangedC}/>
+        <InlineMath math={`t=${tc}`}/>
+        <h2>Πεπερασμένες Διαφορές</h2>
+        <h3>Εμπρόσθεν διαφορές</h3>
+        <p>Πρώτες: <InlineMath math="δf_i=f_{i+1}-f_i"/></p>
+        <p>Δεύτερες: <InlineMath math="δ^2f_i=δf_{i+1}-δf_i"/></p>
+        <p>Κ-ωστό: <InlineMath math="δ^kf_i=δ^{k-1}f_{i+1}-δ^{k-1}f_i"/></p>
     </div>
 }
