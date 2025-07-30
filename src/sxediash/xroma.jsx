@@ -4,6 +4,7 @@ import gamma from "../assets/sxediash/gamma.png";
 import dogNoAlpha from "../assets/sxediash/dogNoAlpha.png"
 import dogAlpha from "../assets/sxediash/dogAlpha.png"
 import hsv from "../assets/sxediash/hsv.png"
+import hdr from "../assets/sxediash/hdr.png"
 import { Chrome, hslaToHsva, rgbaToHsva } from "@uiw/react-color";
 import { useState } from "react";
 
@@ -65,5 +66,12 @@ export default function Xroma()
         <h3>Χρωματικό μοντέλο <span className="text-cyan-500">C</span><span className="text-[#FF00FF]">M</span><span className="text-yellow-400">Y</span>(K) (Cyan Magenta Yellow Key(Black))</h3>
         <p>Είναι αφαιρετικό μοντέλο. Δηλαδή ξεκινάμε με άσπρο και αφαιρούμε χρώματα.</p>
         <p>Χρησιμοποιήται σε εκτυπωτές</p>
+        <h2>Δυναμικό Εύρος (Dynamic Range)</h2>
+        <p><InlineMath math="Δυναμικό \ Εύρος = \frac{I_{max}}{I_{min}}"/></p>
+        <p><InlineMath math="I_{max}="/> μέγιστη ένταση</p>
+        <p><InlineMath math="I_{min}="/> ελάχιστη ένταση</p>
+        <h3>HDR (High Dynamic Range)</h3>
+        <p>Τεχνική κατα την οποία οι εικόνες έχουν περισσότερη λεπτομέρεια σε φωτεινά και σκοτεινά μέρη.</p>
+        <img src={hdr} width={500} height={500} alt="HDR Image" />
     </div>
 }

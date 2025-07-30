@@ -10,6 +10,7 @@ import ProbolesParathrhsh from "./metasxhmatismoi/proboles-parathrhsh";
 import EisagogiSthSxediash from "./sxediash/eisagogi-sth-sxediash";
 import Antitautish from "./sxediash/antitautish";
 import Xroma from "./sxediash/xroma";
+import Fotismos from "./realismos/fotismos";
 
 function App() {
 
@@ -35,6 +36,9 @@ function App() {
         <h3 className="ml-6"><Link to={"/σχεδιαση/αντιταυτιση"}>3.2 Αντιταύτιση</Link></h3>
         <h3 className="ml-6"><Link to={"/σχεδιαση/χρωμα"}>3.3 Χρώμα</Link></h3>
 
+        <h2 className="ml-3">4. Ρεαλισμός</h2>
+        <h3 className="ml-6"><Link to={"/ρεαλισμος/φωτισμος"}>4.1 Φωτισμός</Link></h3>
+
       </div>
       <div className="w-2/3">
         <Routes>
@@ -51,6 +55,8 @@ function App() {
           <Route path="/σχεδιαση/εισαγωγη-στη-σχεδιαση" element={<EisagogiSthSxediash/>} />
           <Route path="/σχεδιαση/αντιταυτιση" element={<Antitautish/>} />
           <Route path="/σχεδιαση/χρωμα" element={<Xroma/>} />
+
+          <Route path="/ρεαλισμος/φωτισμος" element={<Fotismos/>} />
         </Routes>
       </div>
     </div>
