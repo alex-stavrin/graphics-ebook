@@ -11,6 +11,7 @@ import EisagogiSthSxediash from "./sxediash/eisagogi-sth-sxediash";
 import Antitautish from "./sxediash/antitautish";
 import Xroma from "./sxediash/xroma";
 import Fotismos from "./realismos/fotismos";
+import Yfh from "./realismos/yfh";
 
 function App() {
 
@@ -38,6 +39,7 @@ function App() {
 
         <h2 className="ml-3">4. Ρεαλισμός</h2>
         <h3 className="ml-6"><Link to={"/ρεαλισμος/φωτισμος"}>4.1 Φωτισμός</Link></h3>
+        <h3 className="ml-6"><Link to={"/ρεαλισμος/υφη"}>4.2 Υφή</Link></h3>
 
       </div>
       <div className="w-2/3">
@@ -57,6 +59,7 @@ function App() {
           <Route path="/σχεδιαση/χρωμα" element={<Xroma/>} />
 
           <Route path="/ρεαλισμος/φωτισμος" element={<Fotismos/>} />
+          <Route path="/ρεαλισμος/υφη" element={<Yfh/>} />
         </Routes>
       </div>
     </div>
