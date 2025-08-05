@@ -1,6 +1,11 @@
 import brick from "../assets/realismos/brick.jpg"
 import cube from "../assets/realismos/texturing/cube.png"
 import uv from "../assets/realismos/texturing/uv.png"
+import blender from "../assets/realismos/texturing/blender.png"
+import planar from "../assets/realismos/texturing/planar.png"
+import cylinder from "../assets/realismos/texturing/cylinder.webp"
+import sphere from "../assets/realismos/texturing/sphere.png"
+import cubeMap from "../assets/realismos/texturing/cube-map.webp"
 
 export default function Yfh()
 {
@@ -20,5 +25,18 @@ export default function Yfh()
         </p>
         <img src={uv} width={400} height={400} alt="Brick Wall Image" />
         <p>Η ονομάσια UV προέρχεται απο την ονομασία των δύο αξόνων οπου ο οριζόντιος είναι ο U και ο κάθετος ο V</p>
+        <img src={blender} width={600} height={400} alt="Brick Wall Image" />
+        <h2>Mapping</h2>
+        <p>Mapping είναι η διαδικασία που ορίζει πως η 3D γεωμετρία του μοντελού μας θα είναι πάνω στο UV map.</p>
+        <h3>Planar Mapping</h3>
+        <p>Όριζουμε ένα επίπεδο στο χώρο και γίνεται map το texture πάνω στο 3D μοντέλο με βάση αυτό το επίπεδο.</p>
+        <img src={planar} width={400} height={400} alt="Brick Wall Image" />
+        <h3>Cylindrical Mapping</h3>
+        <img src={cylinder} width={400} height={400} alt="Brick Wall Image" />
+        <h3>Sphere Mapping</h3>
+        <img src={sphere} width={500} height={400} alt="Brick Wall Image" />
+        <h3>Cube Mapping</h3>
+        <img src={cubeMap} width={500} height={400} alt="Brick Wall Image" />
+
     </div>
 }

@@ -12,6 +12,9 @@ import Antitautish from "./sxediash/antitautish";
 import Xroma from "./sxediash/xroma";
 import Fotismos from "./realismos/fotismos";
 import Yfh from "./realismos/yfh";
+import Parametrika from "./realismos/parametrika";
+import Kinhsh from "./realismos/kinhsh";
+import Skies from "./realismos/skies";
 
 function App() {
 
@@ -40,7 +43,9 @@ function App() {
         <h2 className="ml-3">4. Ρεαλισμός</h2>
         <h3 className="ml-6"><Link to={"/ρεαλισμος/φωτισμος"}>4.1 Φωτισμός</Link></h3>
         <h3 className="ml-6"><Link to={"/ρεαλισμος/υφη"}>4.2 Υφή</Link></h3>
-
+        <h3 className="ml-6"><Link to={"/ρεαλισμος/παραμετρικα"}>4.3 Παραμετρικά</Link></h3>
+        <h3 className="ml-6"><Link to={"/ρεαλισμος/κινηση"}>4.4 Κίνηση</Link></h3>
+        <h3 className="ml-6"><Link to={"/ρεαλισμος/σκιες"}>4.5 Σκιές</Link></h3>
       </div>
       <div className="w-2/3">
         <Routes>
@@ -60,6 +65,9 @@ function App() {
 
           <Route path="/ρεαλισμος/φωτισμος" element={<Fotismos/>} />
           <Route path="/ρεαλισμος/υφη" element={<Yfh/>} />
+          <Route path="/ρεαλισμος/παραμετρικα" element={<Parametrika/>} />
+          <Route path="/ρεαλισμος/κινηση" element={<Kinhsh/>} />
+          <Route path="/ρεαλισμος/σκιες" element={<Skies/>} />
         </Routes>
       </div>
     </div>
