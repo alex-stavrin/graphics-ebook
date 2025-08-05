@@ -15,40 +15,44 @@ import Yfh from "./realismos/yfh";
 import Parametrika from "./realismos/parametrika";
 import Kinhsh from "./realismos/kinhsh";
 import Skies from "./realismos/skies";
+import Home from "./Home";
 
 function App() {
 
   return (
     <div className="flex flex-row w-full gap-10">
-      <div className="flex flex-col gap-2">
-        <h1>Chapters</h1>
+      <div className="flex flex-col gap-2 mt-4 ml-3">
+        <h1 className="mb-7"><Link to={"/"}>Γραφικά Ebook</Link></h1>
+        
+        <h2>Chapters</h2>
 
-        <h2 className="ml-3">1. Εισαγωγή</h2>
-        <h3 className="ml-6"><Link to={"/εισαγωγη/εισαγωγη-στα-γραφικα"}>1.1 Εισαγωγή στα Γραφικά</Link></h3>
-        <h3 className="ml-6"><Link to={"/εισαγωγη/περικοπη"}>1.2 Περικοπή</Link></h3>
-        <h3 className="ml-6"><Link to={"/εισαγωγη/αποκοπη"}>1.3 Αποκοπή</Link></h3>
-        <h3 className="ml-6"><Link to={"/εισαγωγη/αποκρυψη"}>1.4 Απόκρυψη</Link></h3>
+        <h3 className="ml-3">1. Εισαγωγή</h3>
+        <h4 className="ml-6"><Link to={"/εισαγωγη/εισαγωγη-στα-γραφικα"}>1.1 Εισαγωγή στα Γραφικά</Link></h4>
+        <h4 className="ml-6"><Link to={"/εισαγωγη/περικοπη"}>1.2 Περικοπή</Link></h4>
+        <h4 className="ml-6"><Link to={"/εισαγωγη/αποκοπη"}>1.3 Αποκοπή</Link></h4>
+        <h4 className="ml-6"><Link to={"/εισαγωγη/αποκρυψη"}>1.4 Απόκρυψη</Link></h4>
 
-        <h2 className="ml-3">2. Μετασχηματισμοί</h2>
-        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/εισαγωγη-στους-μετασχηματισμους"}>2.1 Εισαγωγή στους Μετασχηματισμούς</Link></h3>
-        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/ομογενης-μετασχηματισμοι"}>2.2 Ομογενής Μετασχηματισμοί</Link></h3>
-        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/γραφοι-σκηνης"}>2.3 Γράφοι Σκηνής</Link></h3>
-        <h3 className="ml-6"><Link to={"/μετασχηματισμοι/προβολες-παρατηρηση"}>2.4 Προβολές - Παρατήρηση</Link></h3>
+        <h3 className="ml-3">2. Μετασχηματισμοί</h3>
+        <h4 className="ml-6"><Link to={"/μετασχηματισμοι/εισαγωγη-στους-μετασχηματισμους"}>2.1 Εισαγωγή στους Μετασχηματισμούς</Link></h4>
+        <h4 className="ml-6"><Link to={"/μετασχηματισμοι/ομογενης-μετασχηματισμοι"}>2.2 Ομογενής Μετασχηματισμοί</Link></h4>
+        <h4 className="ml-6"><Link to={"/μετασχηματισμοι/γραφοι-σκηνης"}>2.3 Γράφοι Σκηνής</Link></h4>
+        <h4 className="ml-6"><Link to={"/μετασχηματισμοι/προβολες-παρατηρηση"}>2.4 Προβολές - Παρατήρηση</Link></h4>
 
-        <h2 className="ml-3">3. Σχεδίαση</h2>
-        <h3 className="ml-6"><Link to={"/σχεδιαση/εισαγωγη-στη-σχεδιαση"}>3.1 Εισαγωγή στη Σχεδίαση</Link></h3>
-        <h3 className="ml-6"><Link to={"/σχεδιαση/αντιταυτιση"}>3.2 Αντιταύτιση</Link></h3>
-        <h3 className="ml-6"><Link to={"/σχεδιαση/χρωμα"}>3.3 Χρώμα</Link></h3>
+        <h3 className="ml-3">3. Σχεδίαση</h3>
+        <h4 className="ml-6"><Link to={"/σχεδιαση/εισαγωγη-στη-σχεδιαση"}>3.1 Εισαγωγή στη Σχεδίαση</Link></h4>
+        <h4 className="ml-6"><Link to={"/σχεδιαση/αντιταυτιση"}>3.2 Αντιταύτιση</Link></h4>
+        <h4 className="ml-6"><Link to={"/σχεδιαση/χρωμα"}>3.3 Χρώμα</Link></h4>
 
-        <h2 className="ml-3">4. Ρεαλισμός</h2>
-        <h3 className="ml-6"><Link to={"/ρεαλισμος/φωτισμος"}>4.1 Φωτισμός</Link></h3>
-        <h3 className="ml-6"><Link to={"/ρεαλισμος/υφη"}>4.2 Υφή</Link></h3>
-        <h3 className="ml-6"><Link to={"/ρεαλισμος/παραμετρικα"}>4.3 Παραμετρικά</Link></h3>
-        <h3 className="ml-6"><Link to={"/ρεαλισμος/κινηση"}>4.4 Κίνηση</Link></h3>
-        <h3 className="ml-6"><Link to={"/ρεαλισμος/σκιες"}>4.5 Σκιές</Link></h3>
+        <h3 className="ml-3">4. Ρεαλισμός</h3>
+        <h4 className="ml-6"><Link to={"/ρεαλισμος/φωτισμος"}>4.1 Φωτισμός</Link></h4>
+        <h4 className="ml-6"><Link to={"/ρεαλισμος/υφη"}>4.2 Υφή</Link></h4>
+        <h4 className="ml-6"><Link to={"/ρεαλισμος/παραμετρικα"}>4.3 Παραμετρικά</Link></h4>
+        <h4 className="ml-6"><Link to={"/ρεαλισμος/κινηση"}>4.4 Κίνηση</Link></h4>
+        <h4 className="ml-6"><Link to={"/ρεαλισμος/σκιες"}>4.5 Σκιές</Link></h4>
       </div>
-      <div className="w-2/3">
+      <div className="w-2/3 my-3">
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/εισαγωγη/εισαγωγη-στα-γραφικα" element={<EisagogiStaGrafika />} />
           <Route path="/εισαγωγη/περικοπη" element={<Perikoph />} />
           <Route path="/εισαγωγη/αποκοπη" element={<Apokopi />} />
