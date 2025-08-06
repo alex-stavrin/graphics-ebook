@@ -16,6 +16,7 @@ import Parametrika from "./realismos/parametrika";
 import Kinhsh from "./realismos/kinhsh";
 import Skies from "./realismos/skies";
 import Home from "./Home";
+import Xeimerino2025 from "./themata/xeimerino2025";
 
 function App() {
 
@@ -49,6 +50,10 @@ function App() {
         <h4 className="ml-6"><Link to={"/ρεαλισμος/παραμετρικα"}>4.3 Παραμετρικά</Link></h4>
         <h4 className="ml-6"><Link to={"/ρεαλισμος/κινηση"}>4.4 Κίνηση</Link></h4>
         <h4 className="ml-6"><Link to={"/ρεαλισμος/σκιες"}>4.5 Σκιές</Link></h4>
+
+        <h3 className="ml-3">5. Παλιά Θέματα</h3>
+        <h4 className="ml-6"><Link to={"/θεματα/χειμερινο2025"}>Χειμερινό Εξάμηνο 2025</Link></h4>
+
       </div>
       <div className="w-2/3 my-3">
         <Routes>
@@ -72,6 +77,8 @@ function App() {
           <Route path="/ρεαλισμος/παραμετρικα" element={<Parametrika/>} />
           <Route path="/ρεαλισμος/κινηση" element={<Kinhsh/>} />
           <Route path="/ρεαλισμος/σκιες" element={<Skies/>} />
+
+          <Route path="/θεματα/χειμερινο2025" element={<Xeimerino2025/>}/>
         </Routes>
       </div>
     </div>
