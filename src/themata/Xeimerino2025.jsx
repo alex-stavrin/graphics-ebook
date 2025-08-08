@@ -5,6 +5,7 @@ import { useLoader } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { Suspense } from 'react'
 import a from '../assets/themata/a.obj';
+import aScaled from '../assets/themata/aScaled.obj';
 import ap from '../assets/themata/ap.png';
 import b from '../assets/themata/b.obj';
 import bp from '../assets/themata/bp.png';
@@ -12,6 +13,11 @@ import Matrix from "../components/Matrix";
 
 function ModelA() {
   const obj = useLoader(OBJLoader, a)
+  return <primitive object={obj}/>
+}
+
+function ModelAScaled() {
+  const obj = useLoader(OBJLoader, aScaled)
   return <primitive object={obj}/>
 }
 
@@ -98,5 +104,28 @@ export default function Xeimerino2025()
             [0, 0, "1", 0],
             [0,0,0,1]
         ]}/></p>
+        <p>Άρα το σχήμα α θα γίνει</p>
+        <Canvas            
+            camera={{ position: [4, 4, 6], fov: 45 }}
+            style={{ width: 400, height: 400, borderRadius: 15 }}
+        >
+            <color attach="background" args={['black']} />
+            <OrbitControls makeDefault />
+            <ambientLight intensity={0.5} />
+            <axesHelper args={[3]} />
+            <directionalLight position={[5, 5, 5]} />
+            <Suspense fallback={null}>
+                <ModelAScaled />
+            </Suspense>
+        </Canvas>
+        <p>Τώρα μας μένει μια περιστροφή γύρω απο τον άξονα y κατα 90 ή -90 μοίρες (δεν έχει σημασία λογικά)</p>
+        <p>Θυμίζουμε οτι η περιστροφή γύρω απο τον άξονα y με γωνία θ έχει πίνακα</p>
+        <p><InlineMath math="R_y(θ) = "/><Matrix  matrix={[["cosθ",0,"sinθ",0],
+                [0,1, 0, 0],
+                ["-sinθ", 0, "cosθ", 0],
+                [0,0,0,1] 
+            ]}/>
+        </p>
+        <p>Οι 90 μοίρες σε radians είναι <InlineMath math="\frac{π}{2}"/></p>
     </div>
 }
