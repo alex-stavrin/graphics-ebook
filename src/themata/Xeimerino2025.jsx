@@ -66,6 +66,7 @@ export default function Xeimerino2025()
             </Suspense>
         </Canvas>
         <h4>Σχήμα b</h4>
+        <p>Τα κέντρα βάσεων είναι <InlineMath math="p_0=[-1 \ 0 \ 0 \ 1]^Τ"/> και <InlineMath math="p_1=[1 \ 0 \  0 \ 1]^T"/></p>
         <img src={bp} width={400} height={400} alt="BP IMG" />
         <Canvas            
             camera={{ position: [4, 4, 6], fov: 45 }}
