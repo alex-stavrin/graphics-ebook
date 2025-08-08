@@ -8,6 +8,7 @@ import a from '../assets/themata/a.obj';
 import ap from '../assets/themata/ap.png';
 import b from '../assets/themata/b.obj';
 import bp from '../assets/themata/bp.png';
+import Matrix from "../components/Matrix";
 
 function ModelA() {
   const obj = useLoader(OBJLoader, a)
@@ -67,6 +68,7 @@ export default function Xeimerino2025()
         </Canvas>
         <h4>Σχήμα b</h4>
         <p>Τα κέντρα βάσεων είναι <InlineMath math="p_0=[-1 \ 0 \ 0 \ 1]^Τ"/> και <InlineMath math="p_1=[1 \ 0 \  0 \ 1]^T"/></p>
+        <p>Η ακτίνα είναι ίση με 1</p>
         <img src={bp} width={400} height={400} alt="BP IMG" />
         <Canvas            
             camera={{ position: [4, 4, 6], fov: 45 }}
@@ -81,5 +83,20 @@ export default function Xeimerino2025()
                 <ModelB />
             </Suspense>
         </Canvas>
+        <p>Παρατηρούμε οτι η απόσταση των δύο βάσεων παραμένει ίδια. Άλλα η ακτίνα γίνεται 1. Αυτο σημαίνει οτι γίνεται μια αλλάγη μεγέθους κατα 1/2 στους άξονες y και x</p>
+        <p>Ο πίνακας για αλλαγή κλίμακας σε 3D ομογενής συντεταγμένες είναι ο εξής</p>
+        <p><InlineMath math="S(s_x,s_y,s_z)="/> <Matrix matrix={[
+            ["s_x", 0,0,0],
+            [0, "s_y", 0, 0],
+            [0, 0, "s_z", 0],
+            [0,0,0,1]
+        ]}/></p>
+        <p>Εμείς θέλουμε να το αλλάξουμε στο άξονες y και x και στον z να μείνει ίδιο</p>
+        <p><InlineMath math="S(s_x,s_y,s_z)="/> <Matrix matrix={[
+            ["1/2", 0,0,0],
+            [0, "1/2", 0, 0],
+            [0, 0, "1", 0],
+            [0,0,0,1]
+        ]}/></p>
     </div>
 }
