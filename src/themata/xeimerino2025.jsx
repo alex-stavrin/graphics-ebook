@@ -127,5 +127,152 @@ export default function Xeimerino2025()
             ]}/>
         </p>
         <p>Οι 90 μοίρες σε radians είναι <InlineMath math="\frac{π}{2}"/></p>
-    </div>
+        <p><InlineMath math="R_y(θ) = "/><Matrix  matrix={[["cos(π/2)",0,"sin(π/2)",0],
+                [0,1, 0, 0],
+                ["-sin(π/2)", 0, "cos(π/2)", 0],
+                [0,0,0,1] 
+            ]}/>
+            <InlineMath math="="/> <Matrix  matrix={[["0",0,"1",0],
+                [0,1, 0, 0],
+                ["-1", 0, "0", 0],
+                [0,0,0,1] 
+            ]}/>
+        </p>
+        <p>Και έτσι καταλήγουμε στο τελικό μας σχήμα</p>
+        <p>Θυμίζουμε ότι στον πολλαπλασιασμό πινάκων η σειρά θα είναι ανάποδη απο την σειρά που θέλουμε να κάνουμε τους
+            μετασχηματισμούς. Δηλαδή εμείς κάναμε πρώτα το Scaling και μετα το Rotation, αλλά στον πολλαπλιασμό πινάκων πρώτα θα είναι το
+            rotation και μετά το scaling. Δηλαδή:
+        </p>
+        <p><InlineMath math="T=R*S="/> <Matrix matrix={[
+                ["1/2", 0,0,0],
+                [0, "1/2", 0, 0],
+                [0, 0, "1", 0],
+                [0,0,0,1]
+            ]}/>
+            <Matrix  matrix={[["0",0,"1",0],
+                [0,1, 0, 0],
+                ["-1", 0, "0", 0],
+                [0,0,0,1] 
+            ]}/>
+            <InlineMath math="="/>
+            <Matrix matrix={[
+                [0,0,"1/2",0],
+                [0,"1/2",0,0],
+                [-1,0,0,0],
+                [0,0,0,1]
+            ]}/>
+        </p>
+        <h2>Θέμα 2. Σχεδίαση-Αντιταύτιση</h2>
+        <h3>2.1</h3>
+        <p>Οι τιμές μια γραμμικής συνάρτησης f πάνω στο πλέγμα των εικονοστοιχείων είναι</p>
+        <table className="w-1/2">
+            <tbody>
+                <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Ο άξονας X (οριζόντιος) αυξάνεται προς τα δεξιά και ο άξονας Y (κάθετος) αυξάνεται προς τα πάνω. Δηλαδή ξεκινάμε κάτω αριστερά και κουνιόμαστε προς τα δεξιά (x) και προς τα πάνω (y)</p>
+        <p>Ποιες ειναι οι πρωτες πεπερασμενες διαφορες της f δηλαδη <InlineMath math="δ_x f"/> και <InlineMath math="δ_y f"/></p>
+        <p>Το <InlineMath math="f(0,0)=5"/> κάτω αριστερά</p>
+        <p><InlineMath math="f(1,0)=6"/></p>
+        <p><InlineMath math="δ_xf=f(1,0)-f(0,0)=6-5=1"/></p>
+        <p><InlineMath math="f(0,1)=7"/></p>
+        <p><InlineMath math="δ_yf=f(0,1)-f(0,0)=7-5=2"/></p>
+        <p>Οι επόμενη καινούργια στήλη (προς τα δεξιά) θα υπολογιστεί με την βοήθεια του <InlineMath math="δ_xf=1"/>. Απλά συνεχίζοντας κάθε γραμμή και προσθέτοντας κατα 1</p>
+        <table className="w-1/2">
+            <tbody>
+                <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td className="bg-green-600">15</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td className="bg-green-600">13</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td className="bg-green-600">11</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td className="bg-green-600">9</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>Η επόμενη καινούργια γραμμή θα είναι προς τα πάνω και θα υπολογιστεί με την βοήθεια του <InlineMath math="δ_yf=2"/> προσθέτοντας κάθε φορά 2</p>
+        <table className="w-1/2">
+            <tbody>
+                <tr>
+                    <td className="bg-green-600">13</td>
+                    <td className="bg-green-600">14</td>
+                    <td className="bg-green-600">15</td>
+                    <td className="bg-green-600">16</td>
+                    <td className="bg-green-600">17</td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>12</td>
+                    <td>13</td>
+                    <td>14</td>
+                    <td className="bg-green-600">15</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>10</td>
+                    <td>11</td>
+                    <td>12</td>
+                    <td className="bg-green-600">13</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>8</td>
+                    <td>9</td>
+                    <td>10</td>
+                    <td className="bg-green-600">11</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                    <td>8</td>
+                    <td className="bg-green-600">9</td>
+                </tr>
+            </tbody>
+        </table>
+        <h3>2.2</h3>
+    </div> 
 }
