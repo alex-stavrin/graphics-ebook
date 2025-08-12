@@ -4,11 +4,12 @@ import { OrbitControls } from '@react-three/drei'
 import { useLoader } from '@react-three/fiber'
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader'
 import { Suspense } from 'react'
-import a from '../assets/themata/a.obj';
-import aScaled from '../assets/themata/aScaled.obj';
-import ap from '../assets/themata/ap.png';
-import b from '../assets/themata/b.obj';
-import bp from '../assets/themata/bp.png';
+import a from '../assets/themata/xeimerino2025/a.obj';
+import aScaled from '../assets/themata/xeimerino2025/aScaled.obj';
+import ap from '../assets/themata/xeimerino2025/ap.png';
+import b from '../assets/themata/xeimerino2025/b.obj';
+import bp from '../assets/themata/xeimerino2025/bp.png';
+import go from '../assets/themata/xeimerino2025/go.png';
 import Matrix from "../components/Matrix";
 
 function ModelA() {
@@ -330,6 +331,24 @@ export default function Xeimerino2025()
             </li>
         </ul>
         <h3>3.2</h3>
-        <p>Ο αλγόριθμος φωτισμού Gouraud υλοποιείται για το παρακάτων τρίγωνο</p>
+        <p>Ο αλγόριθμος φωτισμού Gouraud υλοποιείται για το παρακάτω τρίγωνο</p>
+        <img src={go} width={400} height={400} alt="Go IMG" />
+        <p>Τα σημεία του τριγώνου είναι:</p>
+        <p><InlineMath math="v_0=[2,2,0]^T"/></p>
+        <p><InlineMath math="v_1=[6,2,0]^T"/></p>
+        <p><InlineMath math="v_2=[4,5,0]^T"/></p>
+        <p>Οι τιμές φωτισμού μοντέλου Phong είναι:</p>
+        <p><InlineMath math="I_{v_0}=7"/></p>
+        <p><InlineMath math="I_{v_1}=11"/></p>
+        <p><InlineMath math="I_{v_2}=4"/></p>
+        <p>Τα σημεία στη γραμμή σάρωσης 3 είναι:</p>
+        <p><InlineMath math="a=[2.66,3,0]^T"/></p>
+        <p><InlineMath math="b=[5.33,3,0]^T"/></p>
+        <p><InlineMath math="s=[4,3,0]^T"/></p>
+        <p>Ζητούμενο: Υπολόγισε τις τιμές φωτισμού στα τρία αυτα σημεία</p>
+        <p>Ο αλγόριθμος λειτουργεί υπολογίζοντας πρώτα την φωτεινότητα στα vertices. Μετα υπολογίζει την φωτεινότητα στα edges (ακμές) κάνοντας γραμμική παρεμβολή (linear interpolation) ανάμεσα στα σημεία.
+            Και τέλος σκιάζουμε το τρίγωνο
+        </p>
+        <p>Εδώ πέρα μας δίνουν ήδη την φωτεινότητα στα vertices. Οπότε αυτό που κάνουμε είναι να υπολογίσουμε τη φωτεινότητα στα σημεία a και b που βρίσκονται πάνω στα edges με γραμμική παρεμβόλη (linear interpolation).</p>
     </div> 
 }
