@@ -17,6 +17,7 @@ import Kinhsh from "./realismos/kinhsh";
 import Skies from "./realismos/skies";
 import Home from "./Home";
 import Xeimerino2025 from "./themata/xeimerino2025";
+import Septembrios2024 from "./themata/septembrios2024";
 
 function App() {
 
@@ -53,6 +54,8 @@ function App() {
 
         <h3 className="ml-3">5. Παλιά Θέματα</h3>
         <h4 className="ml-6"><Link to={"/θεματα/χειμερινο2025"}>Χειμερινό Εξάμηνο 2025</Link></h4>
+        <h4 className="ml-6"><Link to={"/θεματα/σεπτεμβριος2024"}>Σεπτέμβριος 2024</Link></h4>
+
 
       </div>
       <div className="w-2/3 my-3">
@@ -79,6 +82,7 @@ function App() {
           <Route path="/ρεαλισμος/σκιες" element={<Skies/>} />
 
           <Route path="/θεματα/χειμερινο2025" element={<Xeimerino2025/>}/>
+          <Route path="/θεματα/σεπτεμβριος2024" element={<Septembrios2024/>}/>
         </Routes>
       </div>
     </div>
