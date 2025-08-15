@@ -31,7 +31,7 @@ export default function Xeimerino2025()
 {
     return <div className="flex flex-col gap-3">
         <h1>Θέματα Χειμερινό Εξάμηνο 2025</h1>
-        <a href="https://drive.google.com/drive/folders/1V8hAzTb2Qblwq5Xf-4UQMpzUwhR2V_J3?usp=sharing" target="_blank">Αρχεία</a>
+        <a href="https://drive.google.com/drive/folders/1V8hAzTb2Qblwq5Xf-4UQMpzUwhR2V_J3?usp=sharing" target="_blank">Θέματα</a>
         <h2>Θέμα 1. Μετασχηματισμοί</h2>
         <h3>1.1 Σωστό η Λάθος (με εξήγηση)</h3>
         <ul className="ml-5 list-disc flex flex-col gap-3">
