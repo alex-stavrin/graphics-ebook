@@ -228,12 +228,12 @@ export default function OmogenisMetasxhmatismoi()
             <OrbitControls makeDefault />
         </Canvas>
         <h4>Περιστροφή γύρω απο άξονα Z</h4>
-                <p><InlineMath math="R_z(θ) = "/><Matrix  matrix={[["cosθ","-sinθ",0,0],
+            <p><InlineMath math="R_z(θ) = "/><Matrix  matrix={[["cosθ","-sinθ",0,0],
                 ["sinθ","cosθ", 0, 0],
                 [0, 0, 1, 0],
                 [0,0,0,1] 
             ]}/>
-        </p>
+            </p>
         <Canvas
             camera={{ position: [4, 4, 6], fov: 65 }}
             style={{ width: 300, height: 300, borderRadius: 15 }}
