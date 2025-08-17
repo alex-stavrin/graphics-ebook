@@ -13,8 +13,6 @@ export default function Septembrios2024()
         <h2>Θέμα 1. Μετασχηματισμοί</h2>
         <h3>a</h3>
         <p>Αναπτύξτε τον ομογενή μετασχηματισμό που παριστάνει ο πίνακας</p>
-        <p>Σε μια περιστροφη και μετα μια μεταφορα <InlineMath math="M=T1*R1"/></p>
-        <p>Σε μια μεταφορα και μετα μια περιστροφη <InlineMath math="M=R2*T2"/></p>
         <p>
             <InlineMath math="M="/> 
             <Matrix matrix={[
@@ -24,6 +22,8 @@ export default function Septembrios2024()
                 [0,0,0,1]
             ]}/>
         </p>
+        <p>Σε μια περιστροφη και μετα μια μεταφορα <InlineMath math="M=T1*R1"/></p>
+        <p>Σε μια μεταφορα και μετα μια περιστροφη <InlineMath math="M=R2*T2"/></p>
         <p>Υπενθυμίζω ότι ο πίνακας για μεταφορά κατα διάνυσμα <InlineMath math="\vec{d}=(d_x,d_y,d_z)"/> είναι </p>
         <p><InlineMath math="T(\vec{d})="/> <Matrix matrix={[
             [1,0,0,"d_x"],
@@ -64,5 +64,97 @@ export default function Septembrios2024()
         <p>Η συγκεκριμένη περιστροφή φένεται να είναι γύρω του άξονα z κατά γωνία 90 μοίρες</p>
         <img src={rotZ} width={300} height={300} alt="AP IMG" />
         <img src={resZ} width={300} height={300} alt="AP IMG" />
+        <p>Αρα ο πίνακας R1 θα είναι</p>
+        <p><InlineMath math="R1="/><Matrix matrix={[
+            [0,-1,0,0],
+            [1,0,0,0],
+            [0,0,1,0],
+            [0,0,0,1]
+        ]}/></p>
+        <p>Κάνοντας τον πολλαπλασιασμό</p>
+        <p>
+            <InlineMath math="T1*R1="/>
+            <Matrix matrix={[
+                [1,0,0,2],
+                [0,1,0,4],
+                [0,0,1,8],
+                [0,0,0,1]
+            ]}/>
+            <Matrix matrix={[
+                [0,-1,0,0],
+                [1,0,0,0],
+                [0,0,1,0],
+                [0,0,0,1]
+            ]}/>
+            <InlineMath math="="/>
+            <Matrix matrix={[
+                [0,-1,0,2],
+                [1,0,0,4],
+                [0,0,1,8],
+                [0,0,0,1]
+            ]}/>
+            <InlineMath math="=M"/>
+        </p>
+        <p>Τώρα ας βρόυμε το <InlineMath math="M=R2*T2"/></p>
+        <p>Αυτό που θα κάνουμε είναι να περιστρέψουμε το διάνυσμα <InlineMath math="p="/> <Matrix matrix={[[2],[4],[8],[1]]}/> κατά <InlineMath math="R1^T"/>, έτσι ώστε να μην επηρεαστεί απο την σειρά των μετασχηματισμών</p>
+        <p><InlineMath math={"R1^T="}/><Matrix matrix={[
+            [0,1,0,0],
+            [-1,0,0,0],
+            [0,0,1,0],
+            [0,0,0,1]
+        ]}/></p>
+        <p>
+            <InlineMath math="p2=R1^T*p="/>
+            <Matrix matrix={[
+                [0,1,0,0],
+                [-1,0,0,0],
+                [0,0,1,0],
+                [0,0,0,1]
+            ]}/>
+            <Matrix matrix={[[2],[4],[8],[1]]}/>
+            <InlineMath math="="/>
+            <Matrix matrix={[[4],[-2],[8],[1]]}/>
+        </p>
+        <p>Τώρα το T2 Θα έχει ως διάνυσμα το p2.</p>
+        <p>
+            <InlineMath math="T2="/>
+            <Matrix matrix={[
+                [1,0,0,4],
+                [0,1,0,-2],
+                [0,0,1,8],
+                [0,0,0,1]
+            ]}/>
+        </p>
+        <p>To R2=R1</p>
+        <p>
+            <InlineMath math="R2*T2="/>
+            <Matrix matrix={[
+                [0,-1,0,0],
+                [1,0,0,0],
+                [0,0,1,0],
+                [0,0,0,1]
+            ]}/>
+            <Matrix matrix={[
+                [1,0,0,4],
+                [0,1,0,-2],
+                [0,0,1,8],
+                [0,0,0,1]
+            ]}/>
+            <InlineMath math="="/>
+            <Matrix matrix={[
+                [0,-1,0,2],
+                [1,0,0,4],
+                [0,0,1,8],
+                [0,0,0,1]
+            ]}/>
+            <InlineMath math="=M"/>
+        </p>
+        <h3>β</h3>
+        <p>Σωστό ή Λάθος με σύντομη εξήγηση</p>
+        <ul className="list-disc ml-5">
+            <li>
+                Η σύνθεση μετασχηματισμών έχει την προσεταιρεστική ιδιότητα
+            </li>
+        </ul>
     </div>
 }
