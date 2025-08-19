@@ -254,7 +254,7 @@ export default function Septembrios2024()
         <p>Υποθέτουμε οτι σε κάθε κόμβο αντιστοιχεί μετασχηματισμος <InlineMath math="M"/></p>
         <p>Για να πάμε απο ένα παιδί σε έναν γονέα μετασχηματιζουμε με <InlineMath math="M"/></p>
         <p>Για να παμε απο ενα γονεα σε ενα παιδι μετασχηματιζουμε με <InlineMath math="M^{-1}"/></p>
-        
+        <p>Δεν μετασχηματιζουμε με το world coordinate system πινακα</p>
         <p><InlineMath math="M_{Frame \to Table}=M_{Veranda}^{-1}*M_{House}^{-1}*M_{Bike}"/></p>
 
     </div>
