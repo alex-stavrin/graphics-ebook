@@ -4,6 +4,7 @@ import trans from '../assets/themata/septembrios2024/trans.png';
 import ro from '../assets/themata/septembrios2024/ro.png';
 import rotZ from '../assets/themata/septembrios2024/rotZ.png';
 import resZ from "../assets/themata/septembrios2024/resZ.png"
+import scene from "../assets/themata/septembrios2024/scene.png"
 
 export default function Septembrios2024()
 {
@@ -195,6 +196,66 @@ export default function Septembrios2024()
             </li>
         </ul>
         <p>Υπολογίστε τα στοιχεία του παραπάνω πίνακα με ακρίβεια ενός δεκαδικού ψηφίου</p>
-        <p>Εδώ πέρα ισχύει</p>
+        <p>Εδώ πέρα ισχύει. </p>
+        <p>n = το εμπρόσθεν επίπεδο αποκοπής = -10</p>
+        <p>f = το όπισθεν επίπεδο αποκοπής = -110</p>
+        <p>θ = 90 μοίρες = π/2</p>
+        <p><InlineMath math="t=|n|\cdot tan(\frac{θ}{2})=10\cdot tan(\frac{π}{4})=10"/></p>
+        <p><InlineMath math="b=-t=-10"/></p>
+        <p><InlineMath math="r=t\cdot \ aspect=10 \cdot 1 = 10"/></p>
+        <p><InlineMath math="l=-r=-10"/></p>
+        <p>Άρα ο πίνακας.</p>
+        <p>
+            <InlineMath math="M_{ΣΣΠ \to ΚΣΣ}^{ΠΡΟΟΠ}="/>
+            <Matrix matrix={[
+                ["-1",0,0,0],
+                [0, "-1",0,0],
+                [0,0,"1.2",22],
+                [0,0,1,0]
+            ]}/>
+        </p>
+        <h2>Θέμα 3. Γράφοι Σκηνής</h2>
+        <h3>a.</h3>
+        <p>Τι παριστάνουν οι κόμβοι ενός γράφου σκηνής. Δικαιολογήστε</p>
+        <ol className="list-decimal ml-4">
+            <li>
+                Μετασχηματισμός απο το ΠΠΣ (Παγκόσμιο Σύστημα Συντεταγμένων) στο ΣΣΜ (Σύστημα Συντεταγμένων Μοντέλου)
+            </li>
+            <li className="text-green-600">
+                Μετασχηματισμός από ένα επίπεδο της ιεαραρχίας ενός μοντέλου στο επόμενο
+            </li>
+            <li>
+                Τον μετασχηματισμό ενός κόμβου σε σχέση με την ρίζα
+            </li>
+            <li>
+                Τον μετασχηματισμό ενός κόμβου σε σχέση με τον παρατηρητή
+            </li>
+        </ol>
+        <h3>β.</h3>
+        <p>Ο γράφος σκηνής μας βοηθά να κατασκευάσουμε τον:</p>
+        <ol className="list-decimal ml-4">
+            <li className="text-green-600">
+                Μετασχηματισμό Μοντέλου
+            </li>
+            <li>
+                Μετασχηματισμό Παρατήρησης
+            </li>
+            <li>
+                Μετασχηματισμό Προβολής
+            </li>
+            <li>
+                Κανένα απο τα παραπάνω
+            </li>
+        </ol>
+        <p>Με τον Μετασχηματισμό Μοντέλου τα αντικείμενα θα μεταφερθούν στο ΠΠΣ (Παγκόσμιο Σύστημα Συντεταγμένων)</p>
+        <h3>γ.</h3>
+        <p>Δεδομένου του ακόλουθου γράφου σκηνής, ορίστε τον μετασχηματισμό του 'Frame' σε σχέση με το 'Table'</p>
+        <img src={scene} width={800} height={300} alt="SCENE IMG" />
+        <p>Υποθέτουμε οτι σε κάθε κόμβο αντιστοιχεί μετασχηματισμος <InlineMath math="M"/></p>
+        <p>Για να πάμε απο ένα παιδί σε έναν γονέα μετασχηματιζουμε με <InlineMath math="M"/></p>
+        <p>Για να παμε απο ενα γονεα σε ενα παιδι μετασχηματιζουμε με <InlineMath math="M^{-1}"/></p>
+        
+        <p><InlineMath math="M_{Frame \to Table}=M_{Veranda}^{-1}*M_{House}^{-1}*M_{Bike}"/></p>
+
     </div>
 }
