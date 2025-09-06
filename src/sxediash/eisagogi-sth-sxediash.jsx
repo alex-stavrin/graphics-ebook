@@ -48,30 +48,32 @@ export default function EisagogiSthSxediash()
     return <div className="flex flex-col gap-3">
         <h1>Εισαγωγή στην Σχεδίαση</h1>
         <p>Οι οθόνες των υπολογιστών δεν είναι τίποτα αλλο απο ένας 2D πίνακας απο pixels</p>
-        <img src={screen} width={400} height={400} alt="Screen Image" />
+        <img src={screen} className="w-full max-w-[400px] h-auto" alt="Screen Image" />
         <h2>Αναπάρασταση</h2>
         <p>Η αναπαράσταση γίνεται με βάση τα κέντρα των pixels</p>
         <h3>Κέντρα σε ημίσειες συντεταγμένες</h3>
         <p>Εδώ τα κέντρα θα έχουν δεκαδικές συντεταγμένες</p>
-        <img src={floatRep} width={400} height={400} alt="Floating Representation Image" />
+        <img src={floatRep} className="w-full max-w-[400px] h-auto" alt="Floating Representation Image" />
         <h3>Κέντρα σε ακέραιες συντεταγμένες</h3>
         <p>Προτιμαμε αυτη την αναπαράσταση. Εδώ τα κέντρα θα έχουν ακέραιες συντεταγμένες</p>
-        <img src={intRep} width={400} height={400} alt="Integer Representation Image" />
+        <img src={intRep} className="w-full max-w-[400px] h-auto" alt="Integer Representation Image" />
         <h2>Γείτονες Pixel</h2>
         <p>Κάθε pixel έχει κάποιους γείτονες pixel. Υπάρχουν δύο τρόποι αναπαράστασης των γειτόνων</p>
         <h3>Τετραπλή</h3>
-        <img src={four} width={400} height={400} alt="Four Image" />
+        <img src={four} className="w-full max-w-[400px] h-auto" alt="Four Image" />
         <h3>Οκταπλή</h3>
-        <img src={eight} width={400} height={400} alt="Eight Image" />
+        <img src={eight} className="w-full max-w-[400px] h-auto" alt="Eight Image" />
         <h2>Μαθηματικές καμπύλες</h2>
         <h3>Πεπλεγμένη Αλγεβρική Μορφή</h3>
         <p><InlineMath math="f(x,y)=0"/></p>
-        <p><InlineMath math="f(x,y)=\begin{cases}
-            < 0 , σημείο \ (x,y) \ είναι \ εντός \ της \ καμπύλης \\
-            = 0 , σημείο \ (x,y) \ είναι \ πάνω \ στην \ καμπύλη \\
-            > 0, σημείο \ (x,y) \ είναι \ εκτός \ της \ καμπύλης \\
-            \end{cases}
-        "/></p>
+        <div className="overflow-x-auto">
+            <p><InlineMath math="f(x,y)=\begin{cases}
+                < 0 , σημείο \ (x,y) \ είναι \ εντός \ της \ καμπύλης \\
+                = 0 , σημείο \ (x,y) \ είναι \ πάνω \ στην \ καμπύλη \\
+                > 0, σημείο \ (x,y) \ είναι \ εκτός \ της \ καμπύλης \\
+                \end{cases}
+            "/></p>
+        </div>
         <h4>Παραδείγματα</h4>
         <h5>Ευθεία</h5>
         <p><InlineMath math="l(x,y)=ax+by+c=0"/></p>

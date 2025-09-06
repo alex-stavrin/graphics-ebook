@@ -1,7 +1,7 @@
 import { InlineMath } from "react-katex";
 import Matrix from "../components/Matrix";
 import { Layer, Stage, Rect } from "react-konva";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Konva from "konva";
 import AnimationButtonsGroup from "../components/AnimationButtonsGroup";
 
@@ -18,14 +18,32 @@ export default function MetasxhmatismoiEisagogi()
 
     const recRef3 = useRef();
     const skewRef = useRef();
+
+    const [stageSize, setStageSize] = useState(400);
+    const containerRef = useRef();
+    
+    useEffect(() => {
+        const updateSize = () => {
+            if (containerRef.current) {
+                const containerWidth = containerRef.current.offsetWidth;
+                setStageSize(containerWidth);
+            }
+        };
+
+        updateSize();
+        window.addEventListener('resize', updateSize);
+        return () => window.removeEventListener('resize', updateSize);
+    }, []);
     
     useEffect(() => {
         if(!recRef.current || !recRef2.current || !recRef3.current || !recRef4.current) return;
 
+        const scale = stageSize / 400;
+
         translationRef.current = new Konva.Tween({
             node: recRef.current,
             duration: 0.5,
-            x: 250
+            x: (stageSize - (150 * scale))
         });
 
         scaleRef.current = new Konva.Tween({
@@ -47,7 +65,7 @@ export default function MetasxhmatismoiEisagogi()
             skewX: -0.5
         })
 
-    }, [])
+    }, [stageSize])
 
     return <div className="flex flex-col gap-3">
         <h1>Eισαγωγή στους Μετασχηματισμούς</h1>
@@ -128,15 +146,15 @@ export default function MetasxhmatismoiEisagogi()
                 translationRef.current["reset"]();
             }}
         />
-        <div className="border-3 w-[400px] h-[400px]">
-            <Stage width={400} height={400}>
+        <div ref={containerRef} className="border-3 w-full max-w-[400px] h-auto aspect-square">
+            <Stage width={stageSize} height={stageSize}>
                 <Layer>
                     <Rect
                         ref={recRef}
-                        x={50}
-                        y={150}
-                        width={100}
-                        height={100}
+                        x={50 * (stageSize/400)}
+                        y={(stageSize/2) - (50 * (stageSize/400))}
+                        width={100 * (stageSize/400)}
+                        height={100 * (stageSize/400)}
                         fill={"red"}
                     />
                 </Layer>
@@ -162,17 +180,17 @@ export default function MetasxhmatismoiEisagogi()
                 scaleRef.current["reset"]();
             }}
         />
-        <div className="border-3 w-[400px] h-[400px]">
-            <Stage width={400} height={400}>
+        <div className="border-3 w-full max-w-[400px] h-auto aspect-square">
+            <Stage width={stageSize} height={stageSize}>
                 <Layer>
                     <Rect
                         ref={recRef2}
-                        x={200}
-                        y={200}
-                        offsetX={50}
-                        offsetY={50}
-                        width={100}
-                        height={100}
+                        x={stageSize/2}
+                        y={stageSize/2}
+                        offsetX={50 * (stageSize/400)}
+                        offsetY={50 * (stageSize/400)}
+                        width={100 * (stageSize/400)}
+                        height={100 * (stageSize/400)}
                         fill={"blue"}
                     />
                 </Layer>
@@ -198,17 +216,17 @@ export default function MetasxhmatismoiEisagogi()
                 rotateRef.current["play"]();
             }}
         />
-        <div className="border-3 w-[400px] h-[400px]">
-            <Stage width={400} height={400}>
+        <div className="border-3 w-full max-w-[400px] h-auto aspect-square">
+            <Stage width={stageSize} height={stageSize}>
                 <Layer>
                     <Rect
                         ref={recRef4}
-                        x={200}
-                        y={200}
-                        width={100}
-                        height={100}
-                        offsetX={50}
-                        offsetY={50}
+                        x={stageSize/2}
+                        y={stageSize/2}
+                        width={100 * (stageSize/400)}
+                        height={100 * (stageSize/400)}
+                        offsetX={50 * (stageSize/400)}
+                        offsetY={50 * (stageSize/400)}
                         fill={"green"}
                     />
                 </Layer>
@@ -244,17 +262,17 @@ export default function MetasxhmatismoiEisagogi()
                 skewRef.current["reset"]();
             }}
         />
-        <div className="border-3 w-[400px] h-[400px]">
-            <Stage width={400} height={400}>
+        <div className="border-3 w-full max-w-[400px] h-auto aspect-square">
+            <Stage width={stageSize} height={stageSize}>
                 <Layer>
                     <Rect
                         ref={recRef3}
-                        x={200}
-                        y={200}
-                        width={100}
-                        height={100}
-                        offsetX={50}
-                        offsetY={50}
+                        x={stageSize/2}
+                        y={stageSize/2}
+                        width={100 * (stageSize/400)}
+                        height={100 * (stageSize/400)}
+                        offsetX={50 * (stageSize/400)}
+                        offsetY={50 * (stageSize/400)}
                         fill={"purple"}
                     />
                 </Layer>

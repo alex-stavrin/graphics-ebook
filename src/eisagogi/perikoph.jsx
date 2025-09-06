@@ -42,7 +42,7 @@ export default function Perikoph()
         </p>
         <Canvas            
             camera={{ position: [4, 4, 6], fov: 45 }}
-            style={{ width: 400, height: 400, borderRadius: 15 }}
+            style={{ width: "min(400px, 90vw)", height: "min(400px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <OrbitControls makeDefault />
@@ -64,23 +64,23 @@ export default function Perikoph()
         <h2>Περικοπή Παρεμποδιζόμενων (Occlusion Culling)</h2>
         <p>Τεχνική που αποφεύγουμε να ζωγραφίσουμε αντικείμενα που βρίσκονται πίσω απο όλα. Για παράδειγμα αν είμαστε μπροστά απο μια κλειστή
             πόρτα δεν υπάρχει λόγος να ζωγραφίσουμε οτι είναι μέσα στο δωμάτιο (ενταξει. εκτος αν εχει παράθυρο) </p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/bjnVDCIUPJM?si=MgsRJ9SB4zNHKNdu" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe className="w-full max-w-[560px] aspect-video" src="https://www.youtube.com/embed/bjnVDCIUPJM?si=MgsRJ9SB4zNHKNdu" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         <h2>Προβολές κάμερας</h2>
         <p>Στα γραφικά υπάρχουν δύο είδη προβολών κάμερας</p>
         <h3>Προοπτική Προβολή</h3>
         <p>Η προοπτική προβολή είναι σαν το μάτι μας ή μια κάμερα. Εδώ υπάρχει βάθος</p>
-        <img src={perRes} width={400} height={400} alt="Perspective Image" />
+        <img src={perRes} className="w-full max-w-[400px] h-auto" alt="Perspective Image" />
         <p>Σε αυτήν την προβολή δημιουργείται μια πυραμίδα. Οπου ότι είναι μέσα στην πυραμίδα μπορούμε να το δούμε.</p>
-        <img src={perScene} width={400} height={400} alt="Perspective Scene" />
+        <img src={perScene} className="w-full max-w-[400px] h-auto" alt="Perspective Scene" />
         <h3>Ορθογραφική Προβολή</h3>
         <p>Στην ορθογραφική προβολή (orthographic projection) δεν υπάρχει βάθος.</p>
-        <img src={orthRes} width={400} height={400} alt="Orthographic Image" />
+        <img src={orthRes} className="w-full max-w-[400px] h-auto" alt="Orthographic Image" />
         <p>Στην ορθογραφική προβολή δημιουργείται ένα ορθογώνιο παραλληλόγραμμο. Που ότι είναι μέσα του μπορούμε να δούμε</p>
-        <img src={orthScene} width={400} height={400} alt="Orthographic Scene" />
+        <img src={orthScene} className="w-full max-w-[400px] h-auto" alt="Orthographic Scene" />
         <h2>Περικοπή στο Οπτικό Πεδίο (Frustum Culling)</h2>
         <p>Σε αυτή την τεχνική περικοπής ότι είναι ολόκληρο έξω απο την πυραμίδα (προοπτική προβολή) 
           ή έξω απο το ορθογώνιο παραλληλεπίπεδο (ορθογραφική προβολή) δεν το ζωγραφίζουμε.</p>
         <p>Στο συγκεκριμένο video το αποτέλεσμα ειναι υπερβολικό για να μπορούμε να δούμε όντως την επίδραση του</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/-m4HEQc_R9s?si=j3_j3dPpY26-cIn8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe className="w-full max-w-[560px] aspect-video" src="https://www.youtube.com/embed/-m4HEQc_R9s?si=j3_j3dPpY26-cIn8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
     </div>
 }

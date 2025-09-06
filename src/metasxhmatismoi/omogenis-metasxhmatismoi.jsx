@@ -118,7 +118,7 @@ export default function OmogenisMetasxhmatismoi()
         />
         <Canvas
             camera={{ position: [4, 4, 6], fov: 45 }}
-            style={{ width: 300, height: 300, borderRadius: 15 }}
+            style={{ width: "min(300px, 90vw)", height: "min(300px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <a.mesh position={posBox.position}>
@@ -153,7 +153,7 @@ export default function OmogenisMetasxhmatismoi()
         />
         <Canvas
             camera={{ position: [4, 4, 6], fov: 45 }}
-            style={{ width: 300, height: 300, borderRadius: 15 }}
+            style={{ width: "min(300px, 90vw)", height: "min(300px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <a.mesh scale={scaleBox.scale}>
@@ -182,7 +182,7 @@ export default function OmogenisMetasxhmatismoi()
         </p>
         <Canvas
             camera={{ position: [4, 4, 6], fov: 65 }}
-            style={{ width: 300, height: 300, borderRadius: 15 }}
+            style={{ width: "min(300px, 90vw)", height: "min(300px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <RotatingBox rotationAxis={"X"}/>
@@ -209,7 +209,7 @@ export default function OmogenisMetasxhmatismoi()
         </p>
         <Canvas
             camera={{ position: [4, 4, 6], fov: 65 }}
-            style={{ width: 300, height: 300, borderRadius: 15 }}
+            style={{ width: "min(300px, 90vw)", height: "min(300px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <RotatingBox rotationAxis={"Y"}/>
@@ -236,7 +236,7 @@ export default function OmogenisMetasxhmatismoi()
             </p>
         <Canvas
             camera={{ position: [4, 4, 6], fov: 65 }}
-            style={{ width: 300, height: 300, borderRadius: 15 }}
+            style={{ width: "min(300px, 90vw)", height: "min(300px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <RotatingBox rotationAxis={"Z"}/>

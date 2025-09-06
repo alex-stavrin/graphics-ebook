@@ -59,10 +59,10 @@ export default function Xeimerino2025()
         <p>Κέντρο στην αρχή των αξόνων (0,0,0)</p>
         <p>Ακτίνα είναι r=2</p>
         <p><InlineMath math="z_{min}=-1,z_{max}=1"/></p>
-        <img src={ap} width={400} height={400} alt="AP IMG" />
+        <img src={ap} className="w-full max-w-[400px] h-auto" alt="AP IMG" />
         <Canvas            
             camera={{ position: [4, 4, 6], fov: 45 }}
-            style={{ width: 400, height: 400, borderRadius: 15 }}
+            style={{ width: "min(400px, 90vw)", height: "min(400px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <OrbitControls makeDefault />
@@ -76,10 +76,10 @@ export default function Xeimerino2025()
         <h4>Σχήμα b</h4>
         <p>Τα κέντρα βάσεων είναι <InlineMath math="p_0=[-1 \ 0 \ 0 \ 1]^Τ"/> και <InlineMath math="p_1=[1 \ 0 \  0 \ 1]^T"/></p>
         <p>Η ακτίνα είναι ίση με 1</p>
-        <img src={bp} width={400} height={400} alt="BP IMG" />
+        <img src={bp} className="w-full max-w-[400px] h-auto" alt="BP IMG" />
         <Canvas            
             camera={{ position: [4, 4, 6], fov: 45 }}
-            style={{ width: 400, height: 400, borderRadius: 15 }}
+            style={{ width: "min(400px, 90vw)", height: "min(400px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <OrbitControls makeDefault />
@@ -108,7 +108,7 @@ export default function Xeimerino2025()
         <p>Άρα το σχήμα α θα γίνει</p>
         <Canvas            
             camera={{ position: [4, 4, 6], fov: 45 }}
-            style={{ width: 400, height: 400, borderRadius: 15 }}
+            style={{ width: "min(400px, 90vw)", height: "min(400px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <OrbitControls makeDefault />
@@ -332,7 +332,7 @@ export default function Xeimerino2025()
         </ul>
         <h3>3.2</h3>
         <p>Ο αλγόριθμος φωτισμού Gouraud υλοποιείται για το παρακάτω τρίγωνο</p>
-        <img src={go} width={400} height={400} alt="Go IMG" />
+        <img src={go} className="w-full max-w-[400px] h-auto" alt="Go IMG" />
         <p>Τα σημεία του τριγώνου είναι:</p>
         <p><InlineMath math="v_0=[2,2,0]^T"/></p>
         <p><InlineMath math="v_1=[6,2,0]^T"/></p>
