@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="flex flex-row w-full gap-10">
-      <div className="flex flex-col gap-2 mt-4 ml-3">
+  <div className="flex flex-col gap-2 pt-4 ml-3 sticky top-0 h-screen overflow-y-auto self-start">
         <h1 className="mb-7"><Link to={"/"}>Γραφικά Ebook</Link></h1>
         
         <h2>Chapters</h2>
