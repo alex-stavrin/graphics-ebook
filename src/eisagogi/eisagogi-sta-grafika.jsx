@@ -51,7 +51,7 @@ export default function EisagogiStaGrafika()
         </ul>
         <Canvas
             camera={{ position: [4, 4, 6], fov: 45 }}
-            style={{ width: 300, height: 300, borderRadius: 15 }}
+            style={{ width: "min(300px, 90vw)", height: "min(300px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <axesHelper args={[3]} />
@@ -94,7 +94,7 @@ export default function EisagogiStaGrafika()
             αλλάζουμε τις θέσεις των δύο image buffers.
         </p>
         <p>Παράδειγμα μετατροπής μια οθόνης που δείχνει <span className='text-cyan-600'>cyan</span> χρώμα σε <span className='text-orange-600'>πορτοκαλί</span></p>
-        <img src={doubleBufferGif} width={400} height={400} alt="Double Buffering GIF" />
+        <img src={doubleBufferGif} className="w-full max-w-[400px] h-auto" alt="Double Buffering GIF" />
         <h2>Αναπάρασταση 3D μοντελών</h2>
         <p>Ένα μοντέλο αποτελείται απο τρία στοιχεία</p>
         <ul className='list-disc ml-10'>
@@ -111,15 +111,15 @@ export default function EisagogiStaGrafika()
         <h3>Vertices</h3>
         <p>Οι μαύρες κουκίδες είναι τα vertices του 3D κύβου. Έχω διαλέξει ένα vertex. Το ασπρό</p>
         <p>Vertices = πλυθηντικός του vertex</p>
-        <img src={verticesImg} width={400} height={400} alt="Vertices Image" />
+        <img src={verticesImg} className="w-full max-w-[400px] h-auto" alt="Vertices Image" />
         <h3>Edges</h3>
         <p>Οι μαύρες γραμμές είναι τα edges του 3D κύβου. Έχω διαλέξει ένα edge που είναι ασπρό. Ένα edge ενώνει δυο vertices</p>
-        <img src={edgesImg} width={400} height={400} alt="Edges Image" />
+        <img src={edgesImg} className="w-full max-w-[400px] h-auto" alt="Edges Image" />
         <h3>Faces</h3>
         <p>Οι φάτσες του κύβου είναι τα faces. Έχω διαλέξει ένα face που είναι πορτοκαλί. Ένα face είναι απλά ένα πολύγωνο που αποτελείται απο
             vertices τα οποία ενώνονται με edges. Για να έχουμε ενα face τα vertices πρέπει να "κλείνουν" με edges.
         </p>
-        <img src={facesImg} width={400} height={400} alt="Faces Image" />
+        <img src={facesImg} className="w-full max-w-[400px] h-auto" alt="Faces Image" />
         <h2>Obj format</h2>
         <p>Υπάρχουν πολλά format για να αποθήκευουμε 3D μοντέλα. Ένα απο αυτά είναι το .obj. Στο συγκεκριμένο format
             αποθηκεύονται διαφορετικά πραγμάτα που αφορόυν την επιφάνεια. Αλλα αυτό που θα τονίσουμε εδώ είναι οτι αποθηκεούν τα vertices και τα 
@@ -127,7 +127,7 @@ export default function EisagogiStaGrafika()
         </p>
         <Canvas            
             camera={{ position: [4, 4, 6], fov: 45 }}
-            style={{ width: 400, height: 400, borderRadius: 15 }}
+            style={{ width: "min(400px, 90vw)", height: "min(400px, 90vw)", borderRadius: 15 }}
         >
             <color attach="background" args={['black']} />
             <OrbitControls makeDefault />
