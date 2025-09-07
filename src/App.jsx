@@ -19,6 +19,7 @@ import Skies from "./realismos/skies";
 import Home from "./Home";
 import Xeimerino2025 from "./themata/xeimerino2025";
 import Septembrios2024 from "./themata/septembrios2024";
+import Iounios2023 from "./themata/iounios2023";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -143,6 +144,7 @@ function App() {
           <h3 className="ml-3">5. Παλιά Θέματα</h3>
           <h4 className="ml-6"><Link to={"/θεματα/χειμερινο2025"} onClick={closeMobileMenu}>Χειμερινό Εξάμηνο 2025</Link></h4>
           <h4 className="ml-6"><Link to={"/θεματα/σεπτεμβριος2024"} onClick={closeMobileMenu}>Σεπτέμβριος 2024</Link></h4>
+          <h4 className="ml-6"><Link to={"/θεματα/ιουνιος2023"}>Ιούνιος 2023</Link></h4>
         </div>
       </div>
 
@@ -171,6 +173,7 @@ function App() {
 
           <Route path="/θεματα/χειμερινο2025" element={<Xeimerino2025/>}/>
           <Route path="/θεματα/σεπτεμβριος2024" element={<Septembrios2024/>}/>
+          <Route path="/θεματα/ιουνιος2023" element={<Iounios2023/>}/>
         </Routes>
       </div>
     </div>
