@@ -100,6 +100,8 @@ function App() {
         <h3 className="ml-3">5. Παλιά Θέματα</h3>
         <h4 className="ml-6"><Link to={"/θεματα/χειμερινο2025"}>Χειμερινό Εξάμηνο 2025</Link></h4>
         <h4 className="ml-6"><Link to={"/θεματα/σεπτεμβριος2024"}>Σεπτέμβριος 2024</Link></h4>
+        <h4 className="ml-6"><Link to={"/θεματα/ιουνιος2023"}>Ιούνιος 2023</Link></h4>
+
       </div>
 
       {/* Mobile Sidebar */}
