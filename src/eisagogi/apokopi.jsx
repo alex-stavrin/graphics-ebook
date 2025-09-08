@@ -124,7 +124,7 @@ export default function Apokopi()
         <p>Ένα μέρος του ευθύγραμμου τμήματος βρίσκεται μέσα στην οθόνη για κάποια t αν:</p>
         <p><InlineMath math="x_{min} \le x_1 + tΔx \le x_{max}"/> και</p>
         <p><InlineMath math="y_{min} \le y_1 + tΔy \le y_{max}"/></p>
-        <p>Μετακινόντας κάποιος όρους και χωρίζοντας κάθε ανίσωση σε δύο. Το παραπανω μπορεί να γραφτεί</p>
+        <p>Μετακινόντας κάποιους όρους και χωρίζοντας κάθε ανίσωση σε δύο. Το παραπανω μπορεί να γραφτεί</p>
         <p><InlineMath math="-tΔx \le x_1-x_{min}"/> και</p>
         <p><InlineMath math="tΔx \le x_{max}-x_{1}"/> και</p>
         <p><InlineMath math="-tΔy \le y_1-y_{min}"/> και</p>
