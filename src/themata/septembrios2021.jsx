@@ -1,5 +1,6 @@
 import { InlineMath } from "react-katex";
 import MatrixMath from "../components/Matrix";
+import sketch from "../assets/themata/septembrios2021/sketch.png"
 
 export default function Septembrios2021()
 {
@@ -50,7 +51,7 @@ export default function Septembrios2021()
                 [1,0,0,"-\\frac{1}{2}"],
                 [0,1,0,"-\\frac{1}{2}"],
                 [0,0,1,"-\\frac{1}{2}"],
-                [1,1,1,1]
+                [0,0,0,1]
             ]}/>
         </p>
         <p>Τώρα που είμαστε στο κέντρο μπορούμε να ξεκινήσουμε να κάνουμε την αλλαγή κλίμακας. Η άσκηση ζητάει διάσταση πλευράς ίση με 2 μονάδες. Αυτη την στιγμή είναι 1 μονάδα. Οπότε θα το διπλασιάσουμε (σε όλους τους άξονες)</p>
@@ -60,12 +61,106 @@ export default function Septembrios2021()
                 [2,0,0,0],
                 [0,2,0,0],
                 [0,0,2,0],
-                [1,1,1,1]
+                [0,0,0,1]
             ]}/>
         </p>
         <p>Έπειτα θέλουμε μια περιστροφή γύρω απο τον άξονα Z κατα +45 μοίρες</p>
         <p>
-            <InlineMath math="R_z(45)="/>
+            <InlineMath math="R_z(\frac{π}{4})="/>
+            <MatrixMath matrix={[
+                ["cos(\\frac{π}{4})","-sin(\\frac{π}{4})", 0,0],
+                ["sin(\\frac{π}{4})", "cos(\\frac{π}{4}",0,0],
+                [0,0,1,0],
+                [0,0,0,1]
+            ]}/>
+            <InlineMath math="="/>
+            <MatrixMath matrix={[
+                ["\\frac{\\sqrt{2}}{2}","-\\frac{\\sqrt{2}}{2}", 0,0],
+                ["\\frac{\\sqrt{2}}{2}", "\\frac{\\sqrt{2}}{2}",0,0],
+                [0,0,1,0],
+                [0,0,0,1]
+            ]}/>
         </p>
+        <p>Τώρα αφου τελειώσαμε με την περιστροφή και αλλαγή κλίμακας μπορούμε να μετακινήσουμε το κεντρό στο σημείο <InlineMath math="[1,1,1]"/></p>
+        <p>
+            <InlineMath math="T(\vec{c})="/>
+            <MatrixMath matrix={[
+                [1,0,0,1],
+                [0,1,0,1],
+                [0,0,1,1],
+                [0,0,0,1]
+            ]}/>
+        </p>
+        <p>Τέλος μπορούμε να φτιάξουμε τον τελικό πίνακα. Θυμίζουμε οτι οι πολλαπλασιάσμοι θα γίνουν με την αντίστροφη σειρά</p>
+        <p>
+            <InlineMath math="U= T(\vec{c})\cdot R_z(\frac{\pi}{4})\cdot S(2,2,2) \cdot T(\vec{d})="/>
+            <MatrixMath matrix={[
+                ["\\sqrt{2}", "-\\sqrt{2}",0,1],
+                ["\\sqrt{2}", "\\sqrt{2}", 0, "-\\sqrt{2}+1"],
+                [0,0,2,0],
+                [0,0,0,1]
+            ]}/>
+        </p>
+        <h3>1.2</h3>
+        <p>Υποθέτοντας οτι το κοστος πολλαπλασιασμου δυο πινακων 4X4 είναι C και οτι το κοστος του πολλαπλασιασμου ενος πινακας 4X4 με ενα σημειο ειναι 1/4C, υπολογιστε το κοστος του παραπανω μετασχηματισμου μοντέλου για τον κύβο οταν:</p>
+        <ol className="list-decimal ml-5">
+            <li>
+                Εφαρμοσθεί ο σύνθετος Μετασχηματισμός Μοντέλου:
+
+                <p>Για να υπολογιστεί ο σύνθετος μετασχηματισμός μοντέλου χρειάζομαστε 3 πολλαπλιασμούς 4x4 πινάκων. Αρα 3C. Έπειτα για να εφαρμόσουμε αυτό σε όλα τα σημεία (8 σημεία) είναι 2C. Άρα το συνολικό κόστος είναι 5C</p>
+            </li>
+            <li>
+                Εφαρμοσθούν σειριακά οι επιμέρους βασικοί μετασχηματισμοί
+
+                <p>Έχουμε 4 μετασχηματισμούς και 8 σημεία. Αρα το κόστος θα είναι <InlineMath math="4\cdot8\cdot\frac{1}{4}C=8C"/></p>
+            </li>
+        </ol>
+        <h2>Θέμα 2. Φωτισμός</h2>
+        <p>Υποθέστε την ακόλουθη εκδοχή του μοντέλου φωτισμού Phong</p>
+        <p><InlineMath math="I=I_e+I_ak_a+ \sum_{j}[f(d_j)I_{i,j}(k_dmax(0,\hat{n}\cdot \hat{I}_j) + k_smax(0,(\hat{n}\cdot\hat{h}_j)^n))]"/></p>
+        <p>Έστω δύο πηγές φωτισμού <InlineMath math="L_1,L_2"/> και ένα σημείο p πανω σε μια επιφάνεια S που φωτιζεται απο τις 2 πηγές</p>
+        <h3>2.1</h3>
+        <p>Σχεδιάστε την κατανόηση σας για το σενάριο αυτό, κάνοντας οποιες υποθέσεις θεωρείται αναγκαίες.</p>
+        <ul className="list-disc ml-5">
+            <li >
+                Η επιφάνεια S θα είναι z = 0 <span className="text-red-600">(κόκκινο)</span>
+            </li>
+            <li>
+                Το σημείο p θα είναι στο (0,0,0) <span className="text-orange-600">(πορτοκαλί)</span>
+            </li>
+            <li>
+                Το φώς <InlineMath math="L_1"/> είναι στο <InlineMath math="(1,0,\sqrt{3})"/> <span className="text-green-600">(πράσινο)</span>
+            </li>
+            <li>
+                Το φώς <InlineMath math="L_2"/> είναι στο <InlineMath math="(\frac{3\sqrt{3}}{2},0,\frac{3}{2})"/> <span className="text-green-600">(πράσινο)</span>
+            </li>
+        </ul>
+        <img src={sketch} className="w-full max-w-[400px] h-auto" alt="BP IMG" />
+        <h3>2.2</h3>
+        <p>Δώστε λογικές τιμές σε όλες τις παραμέτρους και έτσι υπολογίστε την τιμή φωτισμού στο σημείο p</p>
+        <ul className="list-disc ml-5">
+            <li>
+                <InlineMath math="I_e \in [0,1]"/> = ένταση εκπομπής επιφάνειας = 0
+            </li>
+            <li>
+                <InlineMath math="I_a \in [0,1]"/> = ένταση ambient lighting = 0.1
+            </li>
+            <li>
+                <InlineMath math="k_a \in [0,1]"/> = ambient coefficient = 0.2 
+            </li>
+            <li>
+                <InlineMath math="k_d \in [0,1]"/> = diffuse lighting coefficient = 0.8
+            </li>
+            <li>
+                <InlineMath math="k_s \in [0,1]"/> = specular lighting coefficient = 0.25
+            </li>
+            <li>
+                <InlineMath math="n \in [1,200]"/> = shininess exponent = 20
+            </li>
+        </ul>
+        <p>Άρα</p>
+        <p><InlineMath math="I=0.1\cdot0.2+f(d_1)I_1(0.8max(0,\hat{n}\cdot\hat{I}_1)+0.25max(0,(\hat{n}\cdot\hat{h}_1)^{20})+f(d_2)I_2(0.8max(0,\hat{n}\cdot\hat{I}_2)+0.25max(0,(\hat{n}\cdot\hat{h}_2)^{20}"/></p>
+        <h3>2.3</h3>
+        <p>Προτείνετε πως θα πρέπει να αλλάξουν οι διανυσματικές παράμετροι ώστε να ληφθεί η μέγιστη τιμή κατατροπικής ανάκλασης για το <InlineMath math="L_2"/></p>
     </div>
 }
