@@ -11,7 +11,7 @@ export default function Home()
         <h2>Contributors</h2>
         <ul className="list-disc ml-5">
             <li>
-                <a href="https://github.com/dimokol" target="_blank">dimokol</a> : added mobile responsiveness
+                <a href="https://github.com/dimokol" target="_blank">dimokol</a>
             </li>
         </ul>
         <p><a href="https://github.com/alex-stavrin/graphics-ebook" target="_blank">Κάνε commit στο ebook</a></p>
