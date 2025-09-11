@@ -152,15 +152,31 @@ export default function Septembrios2021()
                 <InlineMath math="k_d \in [0,1]"/> = diffuse lighting coefficient = 0.8
             </li>
             <li>
-                <InlineMath math="k_s \in [0,1]"/> = specular lighting coefficient = 0.25
+                <InlineMath math="k_s \in [0,1]"/> = specular lighting coefficient = 0.5
             </li>
             <li>
                 <InlineMath math="n \in [1,200]"/> = shininess exponent = 20
             </li>
+            <li>
+                <InlineMath math="I_1 \in [0,1]"/> = ένταση του <InlineMath math="L_1"/> = 1.0
+            </li>
+            <li>
+                <InlineMath math="I_2 \in [0,1]"/> = ένταση του <InlineMath math="L_2"/> = 0.5
+            </li>
         </ul>
         <p>Άρα</p>
-        <p><InlineMath math="I=0.1\cdot0.2+f(d_1)I_1(0.8max(0,\hat{n}\cdot\hat{I}_1)+0.25max(0,(\hat{n}\cdot\hat{h}_1)^{20})+f(d_2)I_2(0.8max(0,\hat{n}\cdot\hat{I}_2)+0.25max(0,(\hat{n}\cdot\hat{h}_2)^{20}"/></p>
+        <p><InlineMath math="I=0.1\cdot0.2+f(d_1)I_1(0.8max(0,\hat{n}\cdot\hat{I}_1)+0.5max(0,(\hat{n}\cdot\hat{h}_1)^{20}))+f(d_2)I_2(0.8max(0,\hat{n}\cdot\hat{I}_2)+0.5max(0,(\hat{n}\cdot\hat{h}_2)^{20}))"/></p>
+        <p><InlineMath math="I=0.02+f(d_1) \cdot (0.8 \cdot max(\hat{n}\cdot\hat{I}_1)+0.5max(0,(\hat{n}\cdot \hat{h}_1)^{20}))+f(d_2)\cdot 0.5 \cdot( 0.8 \cdot max(0,\hat{n} \cdot \hat{I}_2+0.5max(0,(\hat{n} \cdot \hat{h}_2)^{20}))"/></p>
+        <p><InlineMath math="I=0.02+f(d_1) \cdot (0.8 \cdot 0.86 + 0.5 \cdot 0.5)+f(d_2) \cdot 0.5 (0.8 \cdot 0.5 +0.5\cdot 0.057)"/></p>
+        <p>Το <InlineMath math="f(d)"/> είναι μια συνάρτηση που παίρνει ώς είσοδο την απόσταση του φωτός απο το σημείο και επιστρέφει έναν πραγματικό αριθμό που ρυθμίζει την φωτεινότητα του σημείου, έτσι ώστε όσο πιο μακριά το φώς τόσο λιγότερη η ένταση (οχι γραμμικό). </p>
+        <p><InlineMath math="f(d)=\frac{1}{d^2}"/></p>
+        <p>Η απόσταση του <InlineMath math="L_1"/> είναι <InlineMath math="d_1=2"/></p>
+        <p>Η απόσταση του <InlineMath math="L_2"/> είναι <InlineMath math="d_1=3"/></p>
+        <p><InlineMath math="I=0.02+0.25 \cdot (0.8 \cdot 0.86 + 0.5 \cdot 0.5)+0.11 \cdot 0.5 (0.8 \cdot 0.5 +0.5\cdot 0.057) \approx 0.2795"/></p>
+
         <h3>2.3</h3>
         <p>Προτείνετε πως θα πρέπει να αλλάξουν οι διανυσματικές παράμετροι ώστε να ληφθεί η μέγιστη τιμή κατατροπικής ανάκλασης για το <InlineMath math="L_2"/></p>
+        <p>Εστω <InlineMath math="\hat{v}"/> το διάνυσμα του παρατηρητη κάμερας. Η κατοπτρική μεγιστοποιείται όταν:</p>
+        <p><InlineMath math="\hat{v} = 2(\hat{n} \cdot \hat{i}_2)\hat{n}-\hat{i}_2"/></p>
     </div>
 }
