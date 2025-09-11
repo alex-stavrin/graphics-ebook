@@ -21,6 +21,7 @@ import Xeimerino2025 from "./themata/xeimerino2025";
 import Septembrios2024 from "./themata/septembrios2024";
 import Iounios2023 from "./themata/iounios2023";
 import Septembrios2021 from "./themata/septembrios2021";
+import Xeimerino2020 from "./themata/xeimerino2020";
 
 function App() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -102,8 +103,8 @@ function App() {
         <h4 className="ml-6"><Link to={"/θεματα/χειμερινο2025"}>Χειμερινό Εξάμηνο 2025</Link></h4>
         <h4 className="ml-6"><Link to={"/θεματα/σεπτεμβριος2024"}>Σεπτέμβριος 2024</Link></h4>
         <h4 className="ml-6"><Link to={"/θεματα/ιουνιος2023"}>Ιούνιος 2023</Link></h4>
-        <h4 className="ml-6"><Link to={"/θεματα/σεπτεμβριος2021"} onClick={closeMobileMenu}>Σεπτέμβριος 2021</Link></h4>
-
+        <h4 className="ml-6"><Link to={"/θεματα/σεπτεμβριος2021"}>Σεπτέμβριος 2021</Link></h4>
+        <h4 className="ml-6"><Link to={"/θεματα/χειμερινο2020"}>Χειμερινό 2020</Link></h4>
       </div>
 
       {/* Mobile Sidebar */}
@@ -150,6 +151,7 @@ function App() {
           <h4 className="ml-6"><Link to={"/θεματα/σεπτεμβριος2024"} onClick={closeMobileMenu}>Σεπτέμβριος 2024</Link></h4>
           <h4 className="ml-6"><Link to={"/θεματα/ιουνιος2023"} onClick={closeMobileMenu}>Ιούνιος 2023</Link></h4>
           <h4 className="ml-6"><Link to={"/θεματα/σεπτεμβριος2021"} onClick={closeMobileMenu}>Σεπτέμβριος 2021</Link></h4>
+          <h4 className="ml-6"><Link to={"/θεματα/χειμερινο2020"} onClick={closeMobileMenu}>Χειμερινό 2020</Link></h4>
         </div>
       </div>
 
@@ -180,6 +182,7 @@ function App() {
           <Route path="/θεματα/σεπτεμβριος2024" element={<Septembrios2024/>}/>
           <Route path="/θεματα/ιουνιος2023" element={<Iounios2023/>}/>
           <Route path="/θεματα/σεπτεμβριος2021" element={<Septembrios2021/>}/>
+          <Route path="/θεματα/χειμερινο2020" element={<Xeimerino2020/>}/>
         </Routes>
       </div>
     </div>
