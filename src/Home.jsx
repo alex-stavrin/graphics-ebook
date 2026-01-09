@@ -12,6 +12,7 @@ export default function Home()
         <ul className="list-disc ml-5">
             <li>
                 <a href="https://github.com/dimokol" target="_blank">dimokol</a>
+                <a href="https://github.com/petros-katiforis" target="_blank">petros-katiforis</a>
             </li>
         </ul>
         <p><a href="https://github.com/alex-stavrin/graphics-ebook" target="_blank">Κάνε commit στο ebook</a></p>
