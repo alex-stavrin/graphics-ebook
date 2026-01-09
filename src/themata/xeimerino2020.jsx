@@ -66,7 +66,8 @@ export default function Xeimerino2020()
         <p>Στον παραπάνω αλγόριθμο υπάρχουν τα εξής 3 λογικά λάθη</p>
         <ul className="list-disc ml-5">
             <li>
-                Στην γραμμή 23 δεν χρειάζεται το not
+                Στην γραμμή 23 δεν χρειάζεται το not (απαιτείται κοινό
+                πρόσημο). Στην ίδια γραμμή παραβλέπεται ο έλεγχος του προσήμου του e2
             </li>
             <li>
                 Οι γραμμές 26-28 ξεχνάν το e0. Επίσης πρέπει να είναι έξω απο το if
@@ -100,7 +101,7 @@ export default function Xeimerino2020()
        e3t = e3;
        for(x=bb_xmin; x<=bb_xmax; x++)
        {
-           if not((sign(e0) == sign(e1)) && (sign(e0) == sign(e1)) && (sign(e0) == sign(e3)))
+           if (sign(e0) == sign(e1)) && (sign(e0) == sign(e2)) && (sign(e0) == sign(e3))
            {
                setpixel(x,y,c);
            }
